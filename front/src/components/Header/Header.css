@@ -1,0 +1,43 @@
+.appbar {
+    display: flex !important;
+    justify-content: center;
+    background-color: #343434 !important;
+    height: 100px;
+}
+.pagesBtn {
+    background-color: #e1f5fe1f !important;
+    color: #e4e4e4 !important;
+    padding: 6px 5px !important;
+}
+
+@media(min-width: 1200px) {
+    .pagesBtn {
+        padding: 6px 40px !important;
+    }
+}
+
+.btngroup {
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.178);
+}
+
+
+#logo {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+@media(min-width: 600px) {
+    #logo {
+        height: 55px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(min-width: 1200px) {
+    #logo {
+        height: 65px;
+        margin-bottom: 10px;
+    }
+}
+
