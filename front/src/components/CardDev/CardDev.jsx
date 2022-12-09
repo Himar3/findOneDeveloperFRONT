@@ -9,8 +9,8 @@ import FolderIcon from '@mui/icons-material/Folder';
 import { teal } from '@mui/material/colors';
 import './CardDev.css'
 
-export default function CardDev() {
-  
+export default function CardDev({ name, image, tech }) {
+  console.log(name)
   return (
     <Card className='card-box' sx={{ maxWidth: 245 }}>
       <CardMedia
@@ -22,7 +22,7 @@ export default function CardDev() {
       <CardContent>
         <div className='card'>
           <Typography className='title'>
-            Andrew P
+            { name }
           </Typography>
           <div>
             <IconButton  aria-label="folder" sx={{color:teal[100]}}>
@@ -34,8 +34,7 @@ export default function CardDev() {
           </div>
         </div>
         <Typography className='text' variant="body2" align="center" color="text.primary">
-          #JavaScript #CSS3 #HTML5 #React #Node #Express 
-          #Python
+          { tech }
         </Typography>
       </CardContent>
     </Card>
