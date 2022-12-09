@@ -8,12 +8,7 @@
     background-color: #e1f5fe1f !important;
     color: #e4e4e4 !important;
     padding: 6px 5px !important;
-}
-
-@media(min-width: 1200px) {
-    .pagesBtn {
-        padding: 6px 40px !important;
-    }
+    font-size: 8px !important;
 }
 
 .btngroup {
@@ -21,16 +16,27 @@
     border: 1px solid rgba(255, 255, 255, 0.178);
 }
 
+.btngroupbox {
+    color: whitesmoke !important;
+}
 
 #logo {
     height: 50px;
     margin-bottom: 10px;
 }
 
+.searchBar {
+    border-radius: 50px !important;
+}
+
 @media(min-width: 600px) {
     #logo {
         height: 55px;
         margin-bottom: 10px;
+    }
+    .pagesBtn {
+        padding: 8px 15px !important;
+        font-size: 12px !important;
     }
 }
 
@@ -39,5 +45,10 @@
         height: 65px;
         margin-bottom: 10px;
     }
+    .pagesBtn {
+        padding: 6px 40px !important;
+        font-size: 14px !important;
+    }
+
 }
 

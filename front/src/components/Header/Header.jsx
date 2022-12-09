@@ -139,7 +139,7 @@ function Header() {
             }}
           >
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box className="btngroupbox" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <ButtonGroup className="btngroup" variant="contained" disableElevation aria-label="contained button group" size="medium">
               <Button className='pagesBtn'>Developers</Button>
               <Button className='pagesBtn'>Projects</Button>
@@ -150,7 +150,7 @@ function Header() {
             <SearchIconWrapper >
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase
+            <StyledInputBase className="searchBar"
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
