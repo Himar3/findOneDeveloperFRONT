@@ -9,14 +9,14 @@ import FolderIcon from '@mui/icons-material/Folder';
 import { teal } from '@mui/material/colors';
 import './CardDev.css'
 
-function CardDev( dev ) {
+export default function CardDev( dev ) {
   return (
     <div className='cardContainer'>
       <Card className='card-box' sx={{ width: 245 }}>
         <CardMedia
           component="img"
           height="160"
-          src={dev.image}
+          src={require('../../assets/GitHub-Mark.png')}
           alt="Dev Pic"
         />
         <CardContent>
@@ -42,5 +42,3 @@ function CardDev( dev ) {
     </div>
   );
 }
-
-export default CardDev

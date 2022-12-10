@@ -6,7 +6,7 @@ import getAllDevelopers from '../../services/dev.services'
 import './DevList.css'
 
 
-function DevList() {
+export default function DevList() {
   const [ devs, setDevs ] = useState([])
 
   const listDev = async() => {
@@ -32,5 +32,3 @@ function DevList() {
     </div>
   )
 }
-
-export default DevList

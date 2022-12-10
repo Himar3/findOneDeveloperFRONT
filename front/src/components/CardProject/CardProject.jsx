@@ -8,34 +8,36 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { teal } from '@mui/material/colors';
 import './CardProject.css'
 
-export default function CardProject() {
+export default function CardProject({ title, image, link, description }) {
   
   return (
-    <Card className='card-box' sx={{ maxWidth: 245 }}>
-      <CardMedia
-        component="img"
-        height="160"
-        src={require("../../assets/projectExample.png")}
-        alt="Image Dev"
-      />
-      <CardContent>
-        <div className='card'>
-          <Typography className='title'>
-            Project Title
-          </Typography>
-          <div>
-            <IconButton  aria-label="accountCircle" sx={{color:teal[100]}}>
-              <AccountCircleIcon />
-            </IconButton>
+    <div className='cardContainer'>
+      <Card className='card-box' sx={{ width: 245, height: 260 }}>
+        <CardMedia
+          component="img"
+          height="160"
+          src={require("../../assets/projectExample.png")}
+          alt="Image Dev"
+        />
+        <CardContent>
+          <div className='card'>
+            <Typography className='title'>
+              { title }
+            </Typography>
+            <div>
+              <IconButton  aria-label="accountCircle" sx={{color:teal[100]}}>
+                <AccountCircleIcon />
+              </IconButton>
+            </div>
           </div>
-        </div>
-        <Typography className='subtitle' variant="body2" sx={{color:teal[100]}}>
-            Type Project
+          <Typography className='text' variant="body2" align="center" color="text.primary">
+            { link}
           </Typography>
-        <Typography className='text' variant="body2" align="center" color="text.primary">
-          Project description, about this project
-        </Typography>
-      </CardContent>
-    </Card>
+          <Typography className='text' variant="body2" align="center" color="text.primary">
+            { description }
+          </Typography>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
