@@ -14,6 +14,7 @@ export default function CardDev( dev ) {
     <div className='cardContainer'>
       <Card className='card-box' sx={{ width: 245 }}>
         <CardMedia
+          className='pic'
           component="img"
           height="160"
           src={require('../../assets/GitHub-Mark.png')}

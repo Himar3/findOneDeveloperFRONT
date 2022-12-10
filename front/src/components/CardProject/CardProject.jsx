@@ -14,6 +14,7 @@ export default function CardProject({ title, image, link, description }) {
     <div className='cardContainer'>
       <Card className='card-box' sx={{ width: 245, height: 260 }}>
         <CardMedia
+          className='pic'
           component="img"
           height="160"
           src={require("../../assets/projectExample.png")}
@@ -31,10 +32,10 @@ export default function CardProject({ title, image, link, description }) {
             </div>
           </div>
           <Typography className='text' variant="body2" align="center" color="text.primary">
-            { link}
+            { description }
           </Typography>
           <Typography className='text' variant="body2" align="center" color="text.primary">
-            { description }
+            { link }
           </Typography>
         </CardContent>
       </Card>
