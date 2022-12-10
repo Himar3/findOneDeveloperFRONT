@@ -12,7 +12,7 @@ import './CardDev.css'
 export default function CardDev( dev ) {
   return (
     <div className='cardContainer'>
-      <Card className='card-box' sx={{ width: 245 }}>
+      <Card className='card-box'>
         <CardMedia
           className='pic'
           component="img"
@@ -22,10 +22,10 @@ export default function CardDev( dev ) {
         />
         <CardContent>
           <div className='card'>
-            <Typography className='title'>
+            <Typography className='title' sx={{ width: 165 }}>
               { dev.name }
             </Typography>
-            <div>
+            <div className='group-btn' sx={{ width: 80 }}>
               <IconButton  aria-label="folder" sx={{color:teal[100]}}>
                 <FolderIcon />
               </IconButton>
@@ -36,6 +36,9 @@ export default function CardDev( dev ) {
           </div>
           <Typography className='text' variant="body2" align="center" color="text.primary">
             { dev.tech }
+          </Typography>
+          <Typography className='about' variant="body2" align="center" color="text.primary" sx={{ width: 245 }}>
+            { dev.about }
           </Typography>
         </CardContent>
       </Card>

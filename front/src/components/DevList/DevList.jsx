@@ -21,6 +21,7 @@ export default function DevList() {
             name={dev.name}
             image={dev.image}
             tech={dev.tech.map((e) => `#${e} `)}
+            about={dev.about}
             />
         )
     })

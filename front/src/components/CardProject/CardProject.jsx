@@ -12,7 +12,7 @@ export default function CardProject({ title, image, link, description }) {
   
   return (
     <div className='cardContainer'>
-      <Card className='card-box' sx={{ width: 245, height: 260 }}>
+      <Card className='card-box' sx={{ width: 265, height: 260 }}>
         <CardMedia
           className='pic'
           component="img"
