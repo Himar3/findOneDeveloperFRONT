@@ -1,29 +1,34 @@
 import React from 'react'
 import CardDev from '../CardDev/CardDev.jsx'
-import axios from 'axios'
-
-const getAllDevelopers = async() => {
-  const response = await axios.get('http://localhost:2222/api/developers')
-  return response.data
-}
+import { useState } from 'react'
+import { useEffect } from 'react'
+import getAllDevelopers from '../../services/dev.services'
+import './DevList.css'
 
 
 function DevList() {
-    const devList = async() => {
-        const devs = await getAllDevelopers()
-        return devs && devs.map((dev, i) => {
-            return (
-                <CardDev key={i}
-                name={dev.name}
-                image={dev.image}
-                tech={dev.tech}
-                />
-            )
-        })
-    }
+  const [ devs, setDevs ] = useState([])
+
+  const listDev = async() => {
+    const devs = await getAllDevelopers()
+    setDevs(devs)
+  }
+
+  const renderDevs = () => {
+    return devs && devs.map((dev, i) => {
+        return (
+            <CardDev key={i}
+            name={dev.name}
+            image={dev.image}
+            tech={dev.tech.map((e) => `#${e} `)}
+            />
+        )
+    })
+  }
+  useEffect(() => { listDev() }, [devs])
   return (
     <div className='cardList'>
-        {devList()}
+        {renderDevs()}
     </div>
   )
 }

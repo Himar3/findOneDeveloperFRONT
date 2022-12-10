@@ -1,3 +1,11 @@
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+  }
+
 .card {
     display: flex;
     justify-content: space-between;
@@ -6,24 +14,30 @@
 }
 .card-box:hover .MuiCardContent-root {
     border: 0.5px solid #000000 !important;
-    transform: scale(1.025);
     transition: all 0.5s ease;
-    background-color: #050505;  
+    background-color: #050505;
 }
 .card-box:hover {
     border: 0.5px solid #000000 !important;
-    transform: scale(1.025);
     transition: all 0.5s ease;
+    animation: tilt-shaking 0.3s; 
+}
+
+.cardContainer {
+    height: 300px;
 }
 
 .card-box {
+    margin: 20px !important;
     border: 0.5px solid #343434;
     border-radius: 20px !important;
+    height: 260px;
 }
 
 .MuiCardContent-root {
     background-color: #343434;
-    padding: 0px 10px 10px !important;
+    padding: 0px 10px 10px !important;    
+    height: 100%;
 }
 
 .title {

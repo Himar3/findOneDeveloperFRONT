@@ -9,34 +9,38 @@ import FolderIcon from '@mui/icons-material/Folder';
 import { teal } from '@mui/material/colors';
 import './CardDev.css'
 
-export default function CardDev({ name, image, tech }) {
-  console.log(name)
+function CardDev( dev ) {
   return (
-    <Card className='card-box' sx={{ maxWidth: 245 }}>
-      <CardMedia
-        component="img"
-        height="160"
-        src={require("../../assets/GitHub-Mark.png")}
-        alt="Image Dev"
-      />
-      <CardContent>
-        <div className='card'>
-          <Typography className='title'>
-            { name }
-          </Typography>
-          <div>
-            <IconButton  aria-label="folder" sx={{color:teal[100]}}>
-              <FolderIcon />
-            </IconButton>
-            <IconButton className='btn' aria-label="add to favorites" sx={{color:teal[100]}}>
-              <FavoriteIcon />
-            </IconButton>
+    <div className='cardContainer'>
+      <Card className='card-box' sx={{ width: 245 }}>
+        <CardMedia
+          component="img"
+          height="160"
+          src={dev.image}
+          alt="Dev Pic"
+        />
+        <CardContent>
+          <div className='card'>
+            <Typography className='title'>
+              { dev.name }
+            </Typography>
+            <div>
+              <IconButton  aria-label="folder" sx={{color:teal[100]}}>
+                <FolderIcon />
+              </IconButton>
+              <IconButton className='btn' aria-label="add to favorites" sx={{color:teal[100]}}>
+                <FavoriteIcon />
+              </IconButton>
+            </div>
           </div>
-        </div>
-        <Typography className='text' variant="body2" align="center" color="text.primary">
-          { tech }
-        </Typography>
-      </CardContent>
-    </Card>
+          <Typography className='text' variant="body2" align="center" color="text.primary">
+            { dev.tech }
+          </Typography>
+        </CardContent>
+      </Card>
+
+    </div>
   );
 }
+
+export default CardDev
