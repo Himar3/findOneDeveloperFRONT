@@ -12,7 +12,7 @@ import './CardDev.css'
 export default function CardDev( dev ) {
   return (
     <div className='cardContainer'>
-      <Card className='card-box'>
+      <Card className='card-box' sx={{ maxWidth: 245 }}>
         <CardMedia
           className='pic'
           component="img"
@@ -37,7 +37,7 @@ export default function CardDev( dev ) {
           <Typography className='text' variant="body2" align="center" color="text.primary">
             { dev.tech }
           </Typography>
-          <Typography className='about' variant="body2" align="center" color="text.primary" sx={{ width: 245 }}>
+          <Typography className='about' variant="body2" align="center" color="text.primary" sx={{ width: 220 }}>
             { dev.about }
           </Typography>
         </CardContent>

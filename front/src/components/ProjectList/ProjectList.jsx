@@ -22,6 +22,7 @@ export default function ProjectList() {
             image={project.image}
             link={project.link}
             description={project.description}
+            tech={project.tech.map((e) => `#${e} `)}
             />
         )
     })

@@ -8,7 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { teal } from '@mui/material/colors';
 import './CardProject.css'
 
-export default function CardProject({ title, image, link, description }) {
+export default function CardProject({ title, image, link, description, tech }) {
   
   return (
     <div className='cardContainer'>
@@ -31,6 +31,9 @@ export default function CardProject({ title, image, link, description }) {
               </IconButton>
             </div>
           </div>
+          <Typography className='text' variant="body2" align="center" color="text.primary">
+            { tech }
+          </Typography>
           <Typography className='text' variant="body2" align="center" color="text.primary">
             { description }
           </Typography>
