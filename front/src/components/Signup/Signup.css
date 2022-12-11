@@ -1,0 +1,10 @@
+.sign-btn {
+    margin-top: 70px !important;
+    width: 120px;
+    background-color: #d2ff00 !important;
+    color: #343434 !important;
+}
+
+.sign-btn:hover {
+    background-color: #c5ee10e0 !important;
+}

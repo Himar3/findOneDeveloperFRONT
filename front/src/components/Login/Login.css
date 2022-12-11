@@ -1,0 +1,55 @@
+.background {
+    margin: 20px auto;
+    height: 750px;
+    width: 1400px;
+    background-image: url(../../assets/background-findOneDev.png);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.login-container {
+    margin: 45px auto;
+    padding: 30px;
+    height: 600px;
+    width: 400px;
+    background-color: #b9b9b9;
+    border-radius: 10px;
+}
+
+.login-group {
+    margin-bottom: 120px;
+    margin-right: 140px;
+    border: 0;
+}
+
+.login-signup {
+    background-color: #e1f5fe00 !important;
+    color: #343434 !important;
+    padding: 6px 25px !important;
+    font-size: 24px !important;
+}
+
+.input-signup-login {
+    margin: 10px 0 !important;
+    width: 100% !important;
+}
+
+.log-btn {
+    margin-top: 120px !important;
+    background-color: #d2ff00 !important;
+    color: #343434 !important;
+    width: 120px;
+}
+
+.log-btn:hover {
+    background-color: #c5ee10e0 !important;
+}
+
+.forgot {
+    font-size: 10px !important;
+}
+
+.MuiDivider-root {
+    margin: 50px !important;
+    width: 300px;
+}
