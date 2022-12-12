@@ -11,9 +11,11 @@ import EmailIcon from '@mui/icons-material/Email';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { signup } from '../../services/auth.services'
 import './Signup.css'
 
 function Signup() {
+
   const [values, setValues] = React.useState({
     password: '',
     repeatPassword:'',
@@ -21,18 +23,59 @@ function Signup() {
     email: '',
     name: ''
   })
+
+  const [label, setLabel] = React.useState('Repeat password')
+  let valid = true
+
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
   }
+
   const handleClickShowPassword = () => {
     setValues({
       ...values,
       showPassword: !values.showPassword,
     })
   }
+
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
   }
+
+  const handleErrorStyle = () => {
+    if (values.repeatPassword !== values.password) {
+      setLabel(`Password it's not the same`) 
+      valid = false
+     } else { 
+      setLabel('Repeat password')
+      valid = true
+     }
+     return valid
+  }
+
+  const postSignup = () => {
+    const user = {
+      name: values.name,
+      email: values.email,
+      password: values.password
+    }
+    signup(user)
+  }
+
+  const validate = () => {
+    //validate email
+    if (valid) {
+      handleErrorStyle()
+      if (valid) {
+        postSignup()
+      } else {
+        return (console.log(`Password it's not the same`))
+      }
+    } else {
+      return (console.log('Email format not valid'))
+    }
+  }
+
   return (
     <div className='background'>
       <div className='login-container'>
@@ -94,7 +137,7 @@ function Signup() {
             />
           </FormControl>
           <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-repeatPassword">Repeat Password</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-repeatPassword">{label}</InputLabel>
             <OutlinedInput
               id="outlined-adornment-password"
               type={values.showPassword ? 'text' : 'password'}
@@ -112,10 +155,10 @@ function Signup() {
                   </IconButton>
                 </InputAdornment>
               }
-              label="repeatPassword"
+              label={label}
             />
           </FormControl>
-          <Button className='sign-btn' variant="contained" color="success">
+          <Button className='sign-btn' variant="contained" color="success" onClick={() => validate()}>
             Sign up
           </Button>
         </Box>

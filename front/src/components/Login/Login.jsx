@@ -11,7 +11,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { teal } from '@mui/material/colors';
+import { login } from '../../services/auth.services'
 import './Login.css'
 
 function Login() {
@@ -32,6 +32,15 @@ function Login() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
   }
+
+  const postLogin = () => {
+    const user = {
+      email: values.email,
+      password: values.password
+    }
+    login(user)
+  }
+
   return (
     <div className='background'>
       <div className='login-container'>
@@ -77,7 +86,7 @@ function Login() {
               label="Password"
             />
           </FormControl>
-          <Button className='log-btn' variant="contained">
+          <Button className='log-btn' variant="contained" onClick={() => postLogin()}>
             Log in
           </Button>
           <Divider component="div" role="presentation">
