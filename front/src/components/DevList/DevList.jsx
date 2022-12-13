@@ -26,7 +26,7 @@ function DevList() {
         )
     })
   }
-  useEffect(() => { listDev() }, [devs])
+  useEffect(() => { listDev() }, [])
   return (
     <div className='cardList'>
         {renderDevs()}

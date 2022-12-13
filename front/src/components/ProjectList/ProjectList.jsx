@@ -2,7 +2,7 @@ import React from 'react'
 import CardProject from '../CardProject/CardProject.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import getAllProjects from '../../services/project.services'
+import { getAllProjects } from '../../services/project.services'
 import './ProjectList.css'
 
 
@@ -18,6 +18,7 @@ function ProjectList() {
     return project && project.map((project, i) => {
         return (
             <CardProject key={i}
+            id={project.id}
             title={project.title}
             image={project.image}
             link={project.link}
@@ -27,7 +28,7 @@ function ProjectList() {
         )
     })
   }
-  useEffect(() => { listProject() }, [project])
+  useEffect(() => { listProject() }, [])
   return (
     <div className='cardList'>
         {renderProjects()}
