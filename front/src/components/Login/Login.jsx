@@ -11,10 +11,15 @@ import EmailIcon from '@mui/icons-material/Email';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import Card from '@mui/material/Card';
 import { login } from '../../services/auth.services'
+import { useNavigate, Link } from 'react-router-dom'
+
 import './Login.css'
 
 function Login() {
+  const navigate = useNavigate()
+
   const [values, setValues] = React.useState({
     password: '',
     showPassword: false,
@@ -33,20 +38,23 @@ function Login() {
     event.preventDefault()
   }
 
-  const postLogin = () => {
+  const postLogin = async () => {
     const user = {
       email: values.email,
       password: values.password
     }
-    login(user)
+    await login(user)
+    if (localStorage.getItem('token')){ 
+      navigate('/developers') 
+    }
   }
 
   return (
-    <div className='background'>
-      <div className='login-container'>
+    <Card className='background'>
+      <Card className='login-container'>
           <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'flex-start'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
             <Button className='login-signup'>Login</Button>
-            <Button className='login-signup'>Signup</Button>
+            <Button component={Link} to="/signup" className='login-signup'>Signup</Button>
           </ButtonGroup>
         <Box className='login-box' sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', alignItems: 'center'}}>
           <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">            
@@ -67,7 +75,7 @@ function Login() {
           <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">
             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
             <OutlinedInput
-              id="outlined-adornment-password"
+              // id="outlined-adornment-password"
               type={values.showPassword ? 'text' : 'password'}
               value={values.password}
               onChange={handleChange('password')}
@@ -93,8 +101,8 @@ function Login() {
           </Divider>
           <Button className='forgot' variant="text">Forgot password?</Button>
         </Box>
-      </div>
-    </div>
+      </Card>
+    </Card>
   )
 }
 

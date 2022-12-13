@@ -12,9 +12,11 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { signup } from '../../services/auth.services'
+import { Link, useNavigate } from 'react-router-dom'
 import './Signup.css'
 
 function Signup() {
+  const navigate = useNavigate()
 
   const [values, setValues] = React.useState({
     password: '',
@@ -53,13 +55,16 @@ function Signup() {
      return valid
   }
 
-  const postSignup = () => {
+  const postSignup = async () => {
     const user = {
       name: values.name,
       email: values.email,
       password: values.password
     }
-    signup(user)
+    await signup(user)
+    if (localStorage.getItem('token')){ 
+      navigate('/developers') 
+    }
   }
 
   const validate = () => {
@@ -80,7 +85,7 @@ function Signup() {
     <div className='background'>
       <div className='login-container'>
           <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'flex-start'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
-            <Button className='login-signup'>Login</Button>
+            <Button component={Link} to="/login" className='login-signup'>Login</Button>
             <Button className='login-signup'>Signup</Button>
           </ButtonGroup>
         <Box className='login-box' sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', alignItems: 'center'}}>
@@ -117,7 +122,7 @@ function Signup() {
           <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">
             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
             <OutlinedInput
-              id="outlined-adornment-password"
+              // id="outlined-adornment-password"
               type={values.showPassword ? 'text' : 'password'}
               value={values.password}
               onChange={handleChange('password')}
@@ -139,7 +144,7 @@ function Signup() {
           <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-repeatPassword">{label}</InputLabel>
             <OutlinedInput
-              id="outlined-adornment-password"
+              // id="outlined-adornment-password"
               type={values.showPassword ? 'text' : 'password'}
               value={values.repeatPassword}
               onChange={handleChange('repeatPassword')}

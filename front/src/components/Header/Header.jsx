@@ -15,11 +15,34 @@ import MenuItem from '@mui/material/MenuItem';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom'
 import './Header.css'
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
-const pages = ['Developers', 'Projects', 'Proposals'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+  {  
+    title: 'Developers',
+    path: '/developers'
+  },
+  {
+    title: 'Projects',
+    path: '/projects'
+  },
+  {
+    title: 'Proposals',
+    path: '/proposals'
+  }
+];
+const settings = [
+  {
+    title: 'Profile',
+    path: '/profile'
+  },
+  {
+    title: 'Logout'
+    // funcion de logout
+  }
+];
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -64,6 +87,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 function Header() {
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   
@@ -107,16 +131,16 @@ function Header() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                {settings.map((setting, i) => (
+                  <MenuItem key={i} component={Link} to={setting.path} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting.title }</Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
       )
     } else {
-      return <Button variant="text">Login/Signup</Button>
+      return <Button component={Link} to="/login" variant="text">Login/Signup</Button>
     }
   }
 //no conseguimos re-renderizar el header para cambiar el icono avatar/boton login
@@ -154,14 +178,14 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, i) => (
+                <MenuItem key={i} component={Link} to={page.path} onClick={handleCloseNavMenu}>
+                  <Typography  textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <img id="logo" alt={'logo'} src={require('../../assets/findOneLogo.png')}/>
+          <Button component={Link} to="/" id="logo"/>
           <Typography
             variant="h5"
             noWrap
@@ -181,8 +205,8 @@ function Header() {
           </Typography>
           <Box className="btngroupbox" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <ButtonGroup className="btngroup" variant="contained" disableElevation aria-label="contained button group" size="medium">
-              <Button className='pagesBtn'>Developers</Button>
-              <Button className='pagesBtn'>Projects</Button>
+              <Button component={Link} to="/developers" className='pagesBtn'>Developers</Button>
+              <Button  component={Link} to="/projects" className='pagesBtn'>Projects</Button>
               <Button className='pagesBtn'>Proposals</Button>
             </ButtonGroup>
           </Box>    
@@ -201,4 +225,5 @@ function Header() {
     </AppBar>
   );
 }
+
 export default Header;

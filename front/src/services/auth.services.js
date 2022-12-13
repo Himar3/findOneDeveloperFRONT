@@ -1,5 +1,6 @@
 import api from './api'
 
+
 const login = async(user) => {
     const response = await api.post('auth/login', user)
     localStorage.setItem('email', response.data.email)

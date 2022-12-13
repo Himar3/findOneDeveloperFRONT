@@ -6,7 +6,7 @@ import getAllProjects from '../../services/project.services'
 import './ProjectList.css'
 
 
-export default function ProjectList() {
+function ProjectList() {
   const [ project, setProject ] = useState([])
 
   const listProject = async() => {
@@ -34,3 +34,5 @@ export default function ProjectList() {
     </div>
   )
 }
+
+export default ProjectList

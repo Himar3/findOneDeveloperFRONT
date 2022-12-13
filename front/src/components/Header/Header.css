@@ -22,8 +22,12 @@
 }
 
 #logo {
-    height: 50px;
-    margin-bottom: 10px;
+    height: 55px;
+    width: 55%;
+    background-color: #343434;
+    background-image: url(../../assets/findOneLogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .searchBar {
@@ -41,9 +45,14 @@
     }
 }
 
+@media(min-width: 1000px) {
+    #logo {
+        width: 25%;
+    }
+}
+
 @media(min-width: 1200px) {
     #logo {
-        height: 65px;
         margin-bottom: 10px;
     }
     .pagesBtn {
