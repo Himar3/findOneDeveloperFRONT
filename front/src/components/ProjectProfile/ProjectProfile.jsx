@@ -1,34 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import { Card, CardMedia, Typography, Chip, Stack } from '@mui/material'
+import React from 'react'
+import  { Link } from 'react-router-dom'
+import { Card, CardMedia, Typography, Chip, Button } from '@mui/material'
 import { teal } from '@mui/material/colors';  
 import './ProjectProfile.css'
 
-function ProjectProfile({project}) {  
-  
-  const test = project
-  console.log(test)
-  // const renderTech = () => {
-  //   project.tech.map((tech, i) => {
-  //     return <Stack key={i} direction="row" spacing={1}><Chip label={'# ' + tech}/></Stack>})
-  // }
-  //   useEffect(() => renderTech(), [])
-    
+function ProjectProfile(project) {
   return (
     <Card className='project-box' sx={{ maxWidth: 1400, height: 750, color:teal[400]}}>
       <div id='header-box'>
         <div id='title-team'>
           <div id='title-box'>
             <div className="profile-title">
-            <Typography variant="h3" >PROFILE</Typography>
+            <Typography variant="h3" >PROJECT</Typography>
             </div>
               <Typography className='tx-title' variant="body2" align="center" color="text.primary">
                 Title
               </Typography>
-              <Chip label={test.title} />
+              <Chip label={project.title} />
               <Typography className='tx-title' variant="body2" align="center" color="text.primary">
                 Type
               </Typography>
-              <Chip label={test.type} />
+              <Chip label={project.type} />
           </div>
           <div id='team-box'>
               <Typography className='tx-title' variant="body2" align="center" color="text.primary">
@@ -57,7 +49,7 @@ function ProjectProfile({project}) {
             </Typography>
             <div className='bg-text'>
               <Typography className='tx-description' variant="body2" align="center">
-                kjsdfhkljsdhdfkljhsd jkdsfhkldsjhflkjdshkjlfdskl dskjfhkjfdshlkdfsjhjlkdfshfdsj dsfassgdsgds aggsdkjadhflkdjhfj jadkfhaklshfalkjdf ajkdkfhlkjsfhlkfjsdf
+              {project.description}
               </Typography>
             </div>
           </div> 
@@ -66,14 +58,12 @@ function ProjectProfile({project}) {
               Tech
             </Typography>
             <div className='bg-text'>
-              {/* {renderTech()} */}
+              {project.tech}
             </div>
           </div>
         </div>
         <div className=''>
-          <Typography className=''>
-           Link
-          </Typography>
+          <a href={project.link}></a>
         </div>
     </Card>
   )

@@ -20,6 +20,8 @@
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.1);
     height: fit-content;
+    display: flex;
+    flex-direction: row;
 }
 
 .tx-description {
@@ -76,4 +78,11 @@
 
 .techs {
     display: flex;
+    flex-direction: row;
+}
+
+.link-btn {
+    width: fit-content;
+    height: fit-content;
+    background-color: #d2ff00;
 }

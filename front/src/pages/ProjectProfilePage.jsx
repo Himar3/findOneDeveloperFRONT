@@ -3,9 +3,10 @@ import ProjectProfile from '../components/ProjectProfile/ProjectProfile'
 import Header from '../components/Header/Header'
 import { useParams } from 'react-router'
 import { getOneProject } from '../services/project.services'
+import { Chip, Stack } from '@mui/material'
 
 function ProjectProfilePage() {
-  const [project, setProject] = useState({})
+  const [project, setProject] = useState([1,2])
 
   const renderProject = async () => {
     const oneProject = await getOneProject(id)
@@ -19,7 +20,22 @@ function ProjectProfilePage() {
   return (
     <div>
         <Header/>
-        <ProjectProfile project={project}/>
+        <ProjectProfile 
+        project={project}
+        id={project.id}
+        title={ project.title}
+        type={project.type}
+        description={project.description}
+        link={project.link}
+        team={project.team?.map((member, i) => {
+          return (
+          <Stack key={i} direction="row" spacing={1}><Chip label={member}/></Stack>
+          )})}
+        tech={project.tech?.map((tech, i) => {
+          return (
+          <Stack key={i} direction="row" spacing={1}><Chip label={'# ' + tech}/></Stack>
+          )})}
+        />
     </div>
   )
 }
