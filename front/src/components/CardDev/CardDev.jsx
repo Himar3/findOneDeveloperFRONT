@@ -5,11 +5,13 @@ import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import FolderIcon from '@mui/icons-material/Folder';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { teal } from '@mui/material/colors';
+import { useNavigate } from 'react-router';
 import './CardDev.css'
 
 export default function CardDev( dev ) {
+  const navigate= useNavigate()
   return (
     <div className='cardContainer'>
       <Card className='card-box' sx={{ maxWidth: 245 }}>
@@ -26,8 +28,8 @@ export default function CardDev( dev ) {
               { dev.name }
             </Typography>
             <div className='group-btn' sx={{ width: 80 }}>
-              <IconButton  aria-label="folder" sx={{color:teal[100]}}>
-                <FolderIcon />
+              <IconButton onClick={() => navigate(`/developers/${dev.id}`)} aria-label="accountCircle" sx={{color:teal[100]}}>
+                <AccountCircleIcon />
               </IconButton>
               <IconButton className='btn' aria-label="add to favorites" sx={{color:teal[100]}}>
                 <FavoriteIcon />
@@ -42,7 +44,6 @@ export default function CardDev( dev ) {
           </Typography>
         </CardContent>
       </Card>
-
     </div>
   );
 }

@@ -5,10 +5,9 @@ const getAllDevelopers = async() => {
   return response.data
 }
 
+const getDeveloperById = async(id) => {
+  const response = await api.get(`developers/${id}`)
+  return response.data
+}
 
-// const getDeveloperById = async() => {
-//   const response = await api.get('developers/:id')
-//   return response.data
-// }
-
-export default getAllDevelopers
+export { getAllDevelopers, getDeveloperById }

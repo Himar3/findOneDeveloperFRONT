@@ -5,6 +5,8 @@ import LoginPage from '../pages/LoginPage'
 import SignupPage from '../pages/SignupPage'
 import DevelopersPage from '../pages/DevelopersPage'
 import ProjectsPage from '../pages/ProjectsPage'
+import ProjectProfilePage from '../pages/ProjectProfilePage'
+import AccountPage from '../pages/AccountPage'
 
 
 const router = createBrowserRouter([
@@ -13,7 +15,8 @@ const router = createBrowserRouter([
     {path: '/signup', element: <SignupPage/>},
     {path: '/developers', element: <DevelopersPage/>},
     {path: '/projects', element: <ProjectsPage/>},
-    //{path: '/profile', element: <ProfilePage/>}
+    {path: '/projects/:id', element: <ProjectProfilePage/>},
+    {path: '/developers/:id', element: <AccountPage/>}
 ])
 
 export default router

@@ -4,7 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 import './Profile.css'
 
 function Profile( dev ) {
@@ -24,11 +23,7 @@ function Profile( dev ) {
         </div>
         <Typography className='profile-subtitles' variant="body2" color="text.secondary">Knowledge</Typography>
         <div className="profile-data">
-            {/* { dev.tech.map((tech) => {
-                <Stack direction="row" spacing={1}>
-                  <Chip label={tech} />
-                </Stack>
-              })}  */}
+           {dev.tech}
         </div>    
         <img url={dev.image} alt="developer pic"></img>
         <Button className='profile-btn' variant="contained">Edit profile</Button>

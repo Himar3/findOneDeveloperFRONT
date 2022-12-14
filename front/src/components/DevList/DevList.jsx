@@ -2,7 +2,7 @@ import React from 'react'
 import CardDev from '../CardDev/CardDev.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import getAllDevelopers from '../../services/dev.services'
+import { getAllDevelopers } from '../../services/dev.services'
 import './DevList.css'
 
 
@@ -18,15 +18,17 @@ function DevList() {
     return devs && devs.map((dev, i) => {
         return (
             <CardDev key={i}
+            id={dev.id}
             name={dev.name}
+            email={dev.email}
             image={dev.image}
-            tech={dev.tech.map((e) => `#${e} `)}
             about={dev.about}
+            tech={dev.tech.map((e) => `#${e} `)}
             />
         )
     })
   }
-  useEffect(() => { listDev() }, [devs])
+  useEffect(() => { listDev() }, [])
   return (
     <div className='cardList'>
         {renderDevs()}
