@@ -110,3 +110,11 @@
     display: flex;
     align-self: flex-start;
 }
+.btn-base {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: center;
+    height: 240px;
+    width: 100%;
+}

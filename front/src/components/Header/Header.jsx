@@ -146,7 +146,7 @@ function Header() {
 //no conseguimos re-renderizar el header para cambiar el icono avatar/boton login
 
   return (
-    <AppBar position="static" className='appbar'>
+    <AppBar className='appbar'>
       <Container maxWidth="xl">
         <Toolbar disableGutters className='toolbar'>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

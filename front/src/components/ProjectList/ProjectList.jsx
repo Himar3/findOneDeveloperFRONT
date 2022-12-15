@@ -19,6 +19,7 @@ function ProjectList() {
         return (
             <CardProject key={i}
             id={project.id}
+            userId={project.userId}
             title={project.title}
             image={project.image}
             link={project.link}

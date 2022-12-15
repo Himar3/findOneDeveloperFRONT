@@ -1,0 +1,25 @@
+
+
+.footer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #343434;
+    width: 100%;
+    padding: 10px;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+}
+
+.footer-img {
+    height: 55px;
+    width: 20%;
+    background-color: #343434;
+    background-image: url(../../assets/findOneLogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+

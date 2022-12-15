@@ -7,8 +7,7 @@ import './ProjectProfile.css'
 function ProjectProfile(project) {
   return (
     <Card className='project-box' sx={{ maxWidth: 1400, height: 750, color:teal[400]}}>
-      <div id='header-box'>
-        <div id='title-team'>
+      <div id='header-box'>        
           <div id='title-box'>
             <div className="profile-title">
             <Typography variant="h3" >PROJECT</Typography>
@@ -32,7 +31,7 @@ function ProjectProfile(project) {
                 <Chip label="Andrew" />
               </div>
           </div>
-        </div>
+        
           <div id='img-box'>
             <CardMedia
               className='project-img'
