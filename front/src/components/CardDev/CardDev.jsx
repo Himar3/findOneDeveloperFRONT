@@ -2,18 +2,20 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import FolderIcon from '@mui/icons-material/Folder';
 import { teal } from '@mui/material/colors';
 import { useNavigate } from 'react-router';
+import { ButtonBase } from '@mui/material';
+import { Link } from '@mui/material';
 import './CardDev.css'
 
 export default function CardDev( dev ) {
   const navigate= useNavigate()
   return (
     <div className='cardContainer'>
+      
       <Card className='card-box' sx={{ maxWidth: 245 }}>
         <CardMedia
           className='pic'
@@ -28,20 +30,22 @@ export default function CardDev( dev ) {
               { dev.name }
             </Typography>
             <div className='group-btn' sx={{ width: 80 }}>
-              <IconButton onClick={() => navigate(`/developers/${dev.id}`)} aria-label="accountCircle" sx={{color:teal[100]}}>
-                <AccountCircleIcon />
-              </IconButton>
-              <IconButton className='btn' aria-label="add to favorites" sx={{color:teal[100]}}>
-                <FavoriteIcon />
-              </IconButton>
+              <Link /*onClick={() => navigate(`/projects/`)}*/ sx={{color:teal[100], marginTop: '6px'}}>
+                <FolderIcon />
+              </Link>
+              <Link className='btn' aria-label="add to favorites" sx={{color:teal[100]}}>
+                <FavoriteIcon sx={{marginTop:'6px', marginLeft:'5px'}}/>
+              </Link>
             </div>
           </div>
-          <Typography className='text' variant="body2" align="center" color="text.primary">
-            { dev.tech }
-          </Typography>
-          <Typography className='about' variant="body2" align="center" color="text.primary" sx={{ width: 220 }}>
-            { dev.about }
-          </Typography>
+          <ButtonBase className="btn-base" onClick={() => navigate(`/developers/${dev.id}`)}>
+            <Typography className='text' variant="body2" align="center" color="text.primary">
+              { dev.tech }
+            </Typography>
+            <Typography className='about' variant="body2" align="center" color="text.primary" sx={{ width: 220 }}>
+              { dev.about }
+            </Typography>
+          </ButtonBase>
         </CardContent>
       </Card>
     </div>

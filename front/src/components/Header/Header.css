@@ -3,7 +3,10 @@
     justify-content: center;
     background-color: #343434 !important;
     height: 100px;
-    margin-top: 0;
+    margin-top: 0 !important;
+    margin-bottom: 25px !important;
+    position:sticky !important;
+    top: 0 !important;
 }
 .pagesBtn {
     background-color: #e1f5fe1f !important;

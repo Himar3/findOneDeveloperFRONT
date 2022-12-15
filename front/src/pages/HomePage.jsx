@@ -1,12 +1,16 @@
 import React from "react";
 import Home from "../components/Home/Home";
-import Header from '../components/Header/Header'
+import Header from '../components/Header/Header';
+import Footer from "../components/Footer/Footer";
 
 function HomePage() {
   return (
     <div>
-      <Header/>
-      <Home/>
+      <div className="content-wrap">
+        <Header/>
+        <Home/>
+      </div>
+      <Footer/>
     </div>
   )
 }

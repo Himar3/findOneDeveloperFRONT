@@ -4,6 +4,7 @@ import Header from '../components/Header/Header'
 import { useParams } from 'react-router'
 import { getOneProject } from '../services/project.services'
 import { Chip, Stack } from '@mui/material'
+import Footer from "../components/Footer/Footer";
 
 function ProjectProfilePage() {
   const [project, setProject] = useState({})
@@ -35,6 +36,7 @@ function ProjectProfilePage() {
           <Stack key={i} direction="row" spacing={1}><Chip label={'# ' + tech}/></Stack>
           )})}
         />
+        <Footer/>
     </div>
   )
 }
