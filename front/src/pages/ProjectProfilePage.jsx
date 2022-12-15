@@ -17,7 +17,7 @@ function ProjectProfilePage() {
   const { id } = useParams()
 
   useEffect(() => { renderProject() }, [])
-
+  console.log(project)
   return (
     <div>
         <Header/>
@@ -29,11 +29,11 @@ function ProjectProfilePage() {
         link={project.link}
         team={project.team?.map((member, i) => {
           return (
-          <Stack key={i} direction="row" spacing={1}><Chip label={member}/></Stack>
+          <div key={i}><Chip label={member}/></div>
           )})}
         tech={project.tech?.map((tech, i) => {
           return (
-          <Stack key={i} direction="row" spacing={1}><Chip label={'# ' + tech}/></Stack>
+          <div key={i}><Chip label={'# ' + tech}/></div>
           )})}
         />
         <Footer/>
