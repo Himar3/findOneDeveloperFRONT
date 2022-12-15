@@ -42,13 +42,13 @@ function Profile( dev ) {
         <div className='mid-bottom'>  
           <div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">About</Typography>
-            <div className="profile-data">
+            <div className="profile-data-description">
               <Typography className='profile-subtitles' variant="body1" color="text.secondary">{dev.about}</Typography>
             </div>
           </div> 
           <div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
-            <div className="profile-data">
+            <div className="profile-data-description">
               {dev.tech}
             </div>    
           </div>     
