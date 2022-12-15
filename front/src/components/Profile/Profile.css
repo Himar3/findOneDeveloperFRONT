@@ -1,0 +1,35 @@
+.profileBox {
+    margin: 15px auto;
+}
+
+#profile-content {
+    background-color: #b2dfdb;
+    padding: 10px !important;
+}
+
+.profile-title {
+    margin: 15px;
+    margin-bottom: 100px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 2px 10px;
+    background-color: #343434;
+    color: #b2dfdb;
+}
+
+.profile-subtitles {
+    margin-left: 15px;
+}
+
+.profile-data {
+    margin: 5px auto 45px 15px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.profile-btn {
+    background-color: #d2ff00;
+    color:#343434
+}
+
+
