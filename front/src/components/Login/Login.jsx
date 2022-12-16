@@ -52,11 +52,11 @@ function Login() {
   return (
     <Card className='background'>
       <Card className='login-container'>
-          <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'flex-start'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
+          <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'space-around'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
             <Button className='login-signup'>Login</Button>
             <Button component={Link} to="/signup" className='login-signup'>Signup</Button>
           </ButtonGroup>
-        <Box className='login-box' sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', alignItems: 'center'}}>
+        <Box className='login-box' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent:'center'}}>
           <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">            
           <InputLabel htmlFor="outlined-adornment-email">Email</InputLabel>
             <OutlinedInput
@@ -75,7 +75,7 @@ function Login() {
           <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">
             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
             <OutlinedInput
-              // id="outlined-adornment-password"
+              id="outlined-adornment-password"
               type={values.showPassword ? 'text' : 'password'}
               value={values.password}
               onChange={handleChange('password')}

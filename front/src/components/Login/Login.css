@@ -1,26 +1,26 @@
 .background {
     margin: 20px auto;
-    height: 750px;
-    width: 1400px;
+    height: 76vh;
+    max-width: 150vh;
     background-image: url(../../assets/background-findOneDev.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .login-container {
-    margin: 45px auto;
-    margin: 45px auto;
+    display: flex;
+    flex-direction: column;
+    margin: 55px auto;
     padding: 30px;
     height: 600px;
-    width: 400px;
-    background-color: #b9b9b9;
+    max-width: 400px;
+    background-color: #b2dfdb !important;
     border-radius: 10px;
 }
 
 .login-group {
     margin-bottom: 120px;
-    margin-right: 140px;
-    border: 0;
 }
 
 .login-signup {

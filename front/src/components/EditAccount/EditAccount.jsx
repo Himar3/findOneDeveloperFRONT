@@ -19,8 +19,7 @@ const navigate = useNavigate()
     name: '',
     email: '',
     about: '',
-    image: '',
-    tech: ''
+    image: ''
   })
 
   const [label, setLabel] = React.useState('')
@@ -47,72 +46,84 @@ const navigate = useNavigate()
   }
 
   return (
-    <Card className="profileBox" sx={{ maxWidth: 1400, height: 750 }}>   
+    <Card className="profileBox" sx={{ maxWidth: 1400, minHeight: 500 }}>   
       <CardContent id="profile-content">
-        <div className='mid-top'>
+        <div className='mid-top mid-top-margin'>
           <div className='profile-name-email'>
-          <div className="profile-title">
-          <Typography variant="h3" >EDIT PROFILE</Typography>
-          </div>
+            <div className="profile-title">
+              <Typography variant="h3" >EDIT PROFILE</Typography>
+            </div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Name</Typography>
-            <div className="profile-data">
-            <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">            
-              <InputLabel >New name?</InputLabel>
-                <OutlinedInput
+            <div className="profile-data width85">
+              <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">            
+                <InputLabel >New name?</InputLabel>
+                <OutlinedInput 
                   type={values.name}
                   value={values.name}
                   onChange={handleChange('name')}
                   label="New name?"
                 />
-            </FormControl>
+              </FormControl>
             </div><br></br>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Email</Typography>
-            <div className="profile-data">
+            <div className="profile-data width85" >
               <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">            
                 <InputLabel >New email?</InputLabel>
-                  <OutlinedInput
-                    type={values.email}
-                    value={values.email}
-                    onChange={handleChange('email')}
-                    label="New email?"
-                  />
+                <OutlinedInput 
+                  type={values.email}
+                  value={values.email}
+                  onChange={handleChange('email')}
+                  label="New email?"
+                />
               </FormControl>
             </div>
           </div>
-          <div className='btn-profile-container'>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>My Projects</Button>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button>
-          </div>
-            <div id='img-box'>
-            <CardMedia
-              className='project-img'
-              component="img"
-              src={require("../../assets/GitHub-Mark.png")}
-              alt="Image Dev"
-            />
-          </div>
-        </div>
-        <div className='mid-bottom'>  
-          <div>
-            <Typography className='profile-subtitles' variant="h6" color="text.secondary">About</Typography>
-            <div className="profile-data-description">
-            <TextField
-              id="outlined-multiline-flexible"
-              label="New about"
-              multiline
-              maxRows={4}
-              value={values.about}
-              onChange={handleChange('about')}
-            />
-            </div>
-          </div> 
           <div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
             <div className="profile-data-description">
               {dev.tech}
             </div>    
           </div>     
+            <div id='img-box'>
+              <Typography className='profile-subtitles' variant="h6" color="text.secondary">Picture</Typography>
+              <div className="profile-data-description">
+              <TextField sx={{width: '500px'}}
+                id="outlined-multiline-flexible"
+                label="Copy your picture link here"
+                multiline
+                maxRows={15}
+                value={values.image}
+                onChange={handleChange('image')}
+              />
+              </div>
+            </div>
+        </div>
+        <div className='mid-bottom'>  
+          <div>
+            <Typography className='profile-subtitles' variant="h6" color="text.secondary">About</Typography>
+            <div className="profile-data-description mid-top-margin">
+              <TextField sx={{width: '100%'}}
+                id="outlined-multiline-flexible"
+                label="New about"
+                multiline
+                maxRows={4}
+                value={values.about}
+                onChange={handleChange('about')}
+              />
+            </div>
+          </div>
+          <Button 
+            className='profile-btn' 
+            variant="contained" 
+            sx={{ alignSelf:'center', marginTop:'20px', borderRadius: '5px'}}>
+              Save changes
+          </Button>
+          <Button 
+            className='profile-btn' 
+            variant="contained" 
+            sx={{ alignSelf:'center', marginTop:'30px', marginBottom:'30px',borderRadius: '5px'}}>
+              Cancel
+          </Button>
         </div>
       </CardContent>
     </Card>

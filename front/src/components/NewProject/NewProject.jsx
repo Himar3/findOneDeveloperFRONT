@@ -61,7 +61,7 @@ function NewProject() {
           <div className="profile-title">
           <Typography variant="h3" >PROJECT</Typography>
           </div>
-            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Title modifed</Typography>  
+            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Title</Typography>  
             <div className="profile-data">     
             <FormControl className='input-newProject' sx={{ m: 1, width: '25ch' }} variant="outlined">            
           <InputLabel>Title</InputLabel>
@@ -98,7 +98,7 @@ function NewProject() {
           <InputLabel>Team</InputLabel>
             <OutlinedInput
               id="outlined-adornment-name"
-              type='team'
+              type="Team"
               value={values.team}
               onChange={handleChange('team')}
               label="Team"
@@ -147,7 +147,7 @@ function NewProject() {
               Tecnologias {/* Tecnologias // Aqui renderizar select */}
             </div>    
           </div>     
-            <Button onClick={() => newProject()} className='profile-btn' variant="contained" sx={{ alignSelf:'center', width:'15%', marginTop:'30px', borderRadius: '5px'}}>Create Project</Button>
+            <Button onClick={() => newProject()} className='profile-btn' variant="contained" sx={{ alignSelf:'center', marginTop:'30px', borderRadius: '5px'}}>Create Project</Button>
         </div>
         
       </CardContent>

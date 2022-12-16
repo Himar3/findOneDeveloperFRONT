@@ -5,12 +5,10 @@ import EditAccount from '../components/EditAccount/EditAccount'
 
 function EditAccountPage() {
   return (
-    <div>
-      <div className="content-wrap">
-        <Header/>
-        <EditAccount/>
-        <Footer/>
-      </div>
+    <div className="content-wrap">
+      <Header/>
+      <EditAccount/>
+      <Footer/>
     </div>
   )
 }

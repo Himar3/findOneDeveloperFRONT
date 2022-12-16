@@ -27,7 +27,7 @@ function Profile( dev ) {
             </div>
           </div>
           <div className='btn-profile-container'>
-            <Button  className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
+            <Button  onClick={() => navigate(`/profile`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
             <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>My Projects</Button>
             <Button onClick={() => navigate(`/projects/create`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button>
           </div>

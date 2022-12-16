@@ -19,10 +19,9 @@ function AccountPage() {
 
     useEffect(() => { renderDev() }, [])
     return (
-      <div>
-        <div className="content-wrap">
-          <Header />
-          <Profile 
+      <div className="content-wrap">
+        <Header />
+        <Profile 
           id={dev.id}
           name={dev.name}
           email={dev.email}
@@ -32,9 +31,8 @@ function AccountPage() {
             return (
             <div key={i}><Chip label={'# ' + tech}/></div>
           )})}
-          />
-        </div>
-          <Footer/>
+        />
+        <Footer/>
       </div>
     )
 }

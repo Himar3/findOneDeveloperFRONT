@@ -5,12 +5,10 @@ import Footer from '../components/Footer/Footer'
 
 function DevelopersPage() {
   return (
-    <div>
-      <div className="content-wrap">
-        <Header/>
-        <DevList/>
-        <Footer/>
-      </div>
+    <div className="content-wrap">
+      <Header/>
+      <DevList/>
+      <Footer/>
     </div>
   )
 }

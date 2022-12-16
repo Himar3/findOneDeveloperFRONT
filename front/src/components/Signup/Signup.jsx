@@ -13,6 +13,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { signup } from '../../services/auth.services'
 import { Link, useNavigate } from 'react-router-dom'
+import Card from '@mui/material/Card';
 import './Signup.css'
 
 function Signup() {
@@ -82,9 +83,9 @@ function Signup() {
   }
 
   return (
-    <div className='background'>
-      <div className='login-container'>
-          <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'flex-start'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
+    <Card className='background'>
+      <Card className='login-container'>
+          <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'space-around'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
             <Button component={Link} to="/login" className='login-signup'>Login</Button>
             <Button className='login-signup'>Signup</Button>
           </ButtonGroup>
@@ -167,8 +168,8 @@ function Signup() {
             Sign up
           </Button>
         </Box>
-      </div>
-    </div>
+      </Card>
+    </Card>
   )
 }
 

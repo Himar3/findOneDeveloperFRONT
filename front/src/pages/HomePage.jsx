@@ -5,11 +5,9 @@ import Footer from "../components/Footer/Footer";
 
 function HomePage() {
   return (
-    <div>
-      <div className="content-wrap">
-        <Header/>
-        <Home/>
-      </div>
+    <div className="content-wrap">
+      <Header/>
+      <Home/>
       <Footer/>
     </div>
   )
