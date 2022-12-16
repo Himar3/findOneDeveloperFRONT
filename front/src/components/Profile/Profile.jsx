@@ -5,11 +5,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
+import { Link, useNavigate } from 'react-router-dom'; 
 import './Profile.css'
 
 function Profile( dev ) {
+  const navigate = useNavigate()
   return (
-    <Card className="profileBox" sx={{ maxWidth: 1400, height: 750 }}>   
+    <Card className="profileBox" sx={{ maxWidth: 1400, minHeight: 500 }}>   
       <CardContent id="profile-content">
         <div className='mid-top'>
           <div className='profile-name-email'>
@@ -26,9 +28,9 @@ function Profile( dev ) {
             </div>
           </div>
           <div className='btn-profile-container'>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
+            <Button  className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
             <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>My Projects</Button>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button>
+            <Button onClick={() => navigate(`/projects/create`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button>
           </div>
             <div id='img-box'>
             <CardMedia
@@ -42,7 +44,7 @@ function Profile( dev ) {
         <div className='mid-bottom'>  
           <div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">About</Typography>
-            <div className="profile-data-description">
+            <div className="profile-data-description mid-top-margin">
               <Typography className='profile-subtitles' variant="body1" color="text.secondary">{dev.about}</Typography>
             </div>
           </div> 

@@ -7,7 +7,9 @@ import DevelopersPage from '../pages/DevelopersPage'
 import ProjectsPage from '../pages/ProjectsPage'
 import ProjectProfilePage from '../pages/ProjectProfilePage'
 import AccountPage from '../pages/AccountPage'
+import NewProjectPage from '../pages/NewProjectPage'
 // import EditAccountPage from '../pages/EditAccountPage'
+
 
 
 const router = createBrowserRouter([
@@ -17,8 +19,10 @@ const router = createBrowserRouter([
     {path: '/developers', element: <DevelopersPage/>},
     {path: '/projects', element: <ProjectsPage/>},
     {path: '/projects/:id', element: <ProjectProfilePage/>},
-    {path: '/developers/:id', element: <AccountPage/>}
+    {path: '/developers/:id', element: <AccountPage/>},
     // {path: '/profile', element: <EditAccountPage/>}
+    {path: '/projects/create', element: <NewProjectPage/>}
+
 ])
 
 export default router

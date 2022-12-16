@@ -10,9 +10,12 @@ const getOneProject = async(id) => {
   return response.data
 }
 
+const createProject = async(project) => {  //API.POST/PUT('RUTA', DATA, {OBJ})
+  const response	= await api.post('projects', project, { headers: { token: localStorage.getItem('token')}})
+  return response.data
+}
 
 
-export { getAllProjects, getOneProject }
+export { getAllProjects, getOneProject, createProject }
 
 
-//API.POST/PUT('RUTA', DATA, {OBJ})
