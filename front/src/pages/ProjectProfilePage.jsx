@@ -3,7 +3,7 @@ import ProjectProfile from '../components/ProjectProfile/ProjectProfile'
 import Header from '../components/Header/Header'
 import { useParams } from 'react-router'
 import { getOneProject } from '../services/project.services'
-import { Chip, Stack } from '@mui/material'
+import { Chip } from '@mui/material'
 import Footer from "../components/Footer/Footer";
 
 function ProjectProfilePage() {

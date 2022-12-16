@@ -4,10 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
+import { useNavigate } from 'react-router';
 import './Profile.css'
 
 function Profile( dev ) {
+  const navigate = useNavigate()
   return (
     <Card className="profileBox" sx={{ maxWidth: 1400, height: 750 }}>   
       <CardContent id="profile-content">
@@ -26,7 +27,7 @@ function Profile( dev ) {
             </div>
           </div>
           <div className='btn-profile-container'>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
+            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}} onClick={() => navigate(`/profile/edit`)}>Edit profile</Button>
             <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>My Projects</Button>
             <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button>
           </div>

@@ -3,7 +3,7 @@ import Header from "../components/Header/Header"
 import Profile from "../components/Profile/Profile"
 import { getDeveloperById } from "../services/dev.services"
 import { useParams } from "react-router"
-import { Chip, Stack } from '@mui/material'
+import { Chip } from '@mui/material'
 import Footer from "../components/Footer/Footer"
 
 
@@ -20,7 +20,7 @@ function AccountPage() {
     useEffect(() => { renderDev() }, [])
     return (
       <div>
-        <div className="conent-wrap">
+        <div className="content-wrap">
           <Header />
           <Profile 
           id={dev.id}
