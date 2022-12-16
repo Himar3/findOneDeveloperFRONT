@@ -4,7 +4,7 @@ import './ProjectProfile.css'
 
 function ProjectProfile(project) {
   return (
-    <Card className="profileBox" sx={{ maxWidth: 1400, height: 750 }}>   
+    <Card className="profileBox" sx={{ maxWidth: 1400, minHeight: 500 }}>   
       <CardContent id="profile-content">
         <div className='mid-top'>
           <div className='profile-name-email'>
@@ -39,7 +39,7 @@ function ProjectProfile(project) {
         <div className='mid-bottom'>  
           <div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Description</Typography>
-            <div className="profile-data-description">
+            <div className="profile-data-description mid-top-margin">
               <Typography className='profile-subtitles' variant="body1" color="text.secondary">{project.description}</Typography>
             </div>
           </div> 

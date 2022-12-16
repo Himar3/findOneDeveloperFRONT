@@ -9,7 +9,6 @@ const login = async(user) => {
 
 const signup = async(user) => {
     const response = await api.post('auth/signup', user)    
-    console.log(response)
     localStorage.setItem('email', response.data.email)
     localStorage.setItem('token', response.data.token)
 }

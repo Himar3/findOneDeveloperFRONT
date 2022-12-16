@@ -17,7 +17,6 @@ function ProjectProfilePage() {
   const { id } = useParams()
 
   useEffect(() => { renderProject() }, [])
-  console.log(project)
   return (
     <div>
         <Header/>
