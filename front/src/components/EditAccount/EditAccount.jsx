@@ -46,7 +46,7 @@ const navigate = useNavigate()
   }
 
   return (
-    <Card className="profileBox" sx={{ maxWidth: 1400, minHeight: 500 }}>   
+    <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">
         <div className='mid-top mid-top-margin'>
           <div className='profile-name-email'>
@@ -79,29 +79,31 @@ const navigate = useNavigate()
             </div>
           </div>
           <div>
-            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
-            <div className="profile-data-description">
-              {dev.tech}
-            </div>    
-          </div>     
-            <div id='img-box'>
-              <Typography className='profile-subtitles' variant="h6" color="text.secondary">Picture</Typography>
+            <div className='knowledge-picture'>
+              <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
               <div className="profile-data-description">
-              <TextField sx={{width: '500px'}}
-                id="outlined-multiline-flexible"
-                label="Copy your picture link here"
-                multiline
-                maxRows={15}
-                value={values.image}
-                onChange={handleChange('image')}
-              />
-              </div>
+                {dev.tech}
+              </div>    
+            </div>     
+              <div id='img-box'>
+                <Typography className='profile-subtitles' variant="h6" color="text.secondary">Picture</Typography>
+                <div className="profile-data-description">
+                <TextField sx={{width: '500px'}}
+                  id="outlined-multiline-flexible"
+                  label="Copy your picture link here"
+                  multiline
+                  maxRows={15}
+                  value={values.image}
+                  onChange={handleChange('image')}
+                />
+                </div>
+            </div>
             </div>
         </div>
         <div className='mid-bottom'>  
           <div>
-            <Typography className='profile-subtitles' variant="h6" color="text.secondary">About</Typography>
-            <div className="profile-data-description mid-top-margin">
+            <Typography className='profile-subtitles  margin-top-about' variant="h6" color="text.secondary">About</Typography>
+            <div className="profile-data-description">
               <TextField sx={{width: '100%'}}
                 id="outlined-multiline-flexible"
                 label="New about"
@@ -112,18 +114,20 @@ const navigate = useNavigate()
               />
             </div>
           </div>
-          <Button 
-            className='profile-btn' 
-            variant="contained" 
-            sx={{ alignSelf:'center', marginTop:'20px', borderRadius: '5px'}}>
-              Save changes
-          </Button>
-          <Button 
-            className='profile-btn' 
-            variant="contained" 
-            sx={{ alignSelf:'center', marginTop:'30px', marginBottom:'30px',borderRadius: '5px'}}>
-              Cancel
-          </Button>
+          <div className='save-cancel-container'>
+            <Button 
+              className='profile-btn' 
+              variant="contained" 
+              sx={{ alignSelf:'center', marginTop:'20px', borderRadius: '5px'}}>
+                Save changes
+            </Button>
+            <Button 
+              className='profile-btn' 
+              variant="contained" 
+              sx={{ alignSelf:'center', marginTop:'30px', marginBottom:'30px',borderRadius: '5px'}}>
+                Cancel
+            </Button>
+          </div>
         </div>
       </CardContent>
     </Card>

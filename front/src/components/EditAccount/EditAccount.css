@@ -1,3 +1,18 @@
 .width85 {
     width: 85%;
 }
+
+.save-cancel-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.margin-top-about {
+    margin-top: 80px;
+}
+
+.knowledge-picture {
+display: flex;
+flex-direction: column;
+align-items: center;
+}

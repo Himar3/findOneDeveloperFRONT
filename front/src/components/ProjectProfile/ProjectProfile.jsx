@@ -4,7 +4,7 @@ import './ProjectProfile.css'
 
 function ProjectProfile(project) {
   return (
-    <Card className="profileBox" sx={{ maxWidth: 1400, minHeight: 500 }}>   
+    <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">
         <div className='mid-top'>
           <div className='profile-name-email'>

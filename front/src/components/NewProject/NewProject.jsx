@@ -54,7 +54,7 @@ function NewProject() {
   useEffect(() => renderProvisionalMember()) 
 
   return (
-    <Card className="profileBox" sx={{ maxWidth: 1400, minHeight: 500 }}>   
+    <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">
         <div className='mid-top mid-top-margin'>
           <div className='profile-name-email'>
