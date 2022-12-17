@@ -10,16 +10,19 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import TextField from '@mui/material/TextField';
+import { addTechesToUser } from '../../services/dev.services';
 import './EditAccount.css'
+import * as defaultPic from '../../assets/defaultProfile.jpg'
 
-function EditAccount( dev ) {
+function EditAccount() {
 const navigate = useNavigate()
 
   const [values, setValues] = React.useState({
     name: '',
     email: '',
+    image: '',
     about: '',
-    image: ''
+    tech: ['']
   })
 
   const [label, setLabel] = React.useState('')
@@ -29,36 +32,52 @@ const navigate = useNavigate()
     setValues({ ...values, [prop]: event.target.value })
   }
 
-  const accountEdit = async () => {
-    const user = {
-      name: values.name,
-      email: values.email,
-      about: values.about,
-      image: values.image,
-    }
-    const knowledge = {
-      tech: values.tech
-    }
-    await editOwnProfile(user)
-    if (localStorage.getItem('token')){ 
-      navigate('/profile') 
-    }
+  const userEdit = async () => {
+    const user = {}
+    if (values.name !== '') user.name = values.name
+    if (values.email !== '') user.email = values.email
+    if (values.image !== '') user.image = values.image
+    if (values.about !== '') user.about = values.about
+    
+    const response = await editOwnProfile(user)// post user data 
+    console.log(response)
+    navigate(`/developers/${response.id}`)  
+  }  
+  const postUpdate = async() => {
+   const user = await userEdit()
+    // }
+    // const techEdit = async () => {
+    //   const knowledge = {
+    //      tech: values.tech
+    //   }
+    //   await //function post tech data
+    // }
   }
 
   return (
     <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">
-        <div className='mid-top mid-top-margin'>
-          <div className='profile-name-email'>
             <div className="profile-title">
               <Typography variant="h3" >EDIT PROFILE</Typography>
             </div>
+            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Picture</Typography>
+              <div className="profile-data-description">
+              <TextField sx={{width: '100%'}}
+                id="outlined-multiline-flexible"
+                label="Copy your picture link here:    ---'https://www.mypic/pic.com'---"
+                multiline
+                maxRows={1}
+                value={values.image}
+                onChange={handleChange('image')}
+              />
+              </div>
+        <div className='mid-top'>
+          <div className='profile-name-email align-center'>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Name</Typography>
             <div className="profile-data width85">
               <FormControl className='input-signup-login' sx={{ m: 1, width: '25ch' }} variant="outlined">            
                 <InputLabel >New name?</InputLabel>
                 <OutlinedInput 
-                  type={values.name}
                   value={values.name}
                   onChange={handleChange('name')}
                   label="New name?"
@@ -79,34 +98,28 @@ const navigate = useNavigate()
             </div>
           </div>
           <div>
-            <div className='knowledge-picture'>
-              <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
-              <div className="profile-data-description">
-                {dev.tech}
-              </div>    
-            </div>     
-              <div id='img-box'>
-                <Typography className='profile-subtitles' variant="h6" color="text.secondary">Picture</Typography>
-                <div className="profile-data-description">
-                <TextField sx={{width: '500px'}}
-                  id="outlined-multiline-flexible"
-                  label="Copy your picture link here"
-                  multiline
-                  maxRows={15}
-                  value={values.image}
-                  onChange={handleChange('image')}
-                />
-                </div>
-            </div>
+            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
+            <div className="profile-data-description size-empty-tech">
+             
+            </div>    
+          </div>     
+            <div id='img-box'>
+              <CardMedia
+              sx={{margin:'25px 0 0 0', selfAlign:'start', maxWidth:'400px', maxHeight:'300px'}}
+                className='project-img'
+                component="img"
+                src="../../assets/defaultProfile.jpg"
+                alt="Image Dev"
+              />
             </div>
         </div>
         <div className='mid-bottom'>  
           <div>
-            <Typography className='profile-subtitles  margin-top-about' variant="h6" color="text.secondary">About</Typography>
+            <Typography className='profile-subtitles' variant="h6" color="text.secondary">About</Typography>
             <div className="profile-data-description">
               <TextField sx={{width: '100%'}}
                 id="outlined-multiline-flexible"
-                label="New about"
+                label="New about?"
                 multiline
                 maxRows={4}
                 value={values.about}
@@ -114,17 +127,18 @@ const navigate = useNavigate()
               />
             </div>
           </div>
-          <div className='save-cancel-container'>
+          <div className='group-edit-btn'>
             <Button 
+              onClick={()=> userEdit()}
               className='profile-btn' 
               variant="contained" 
-              sx={{ alignSelf:'center', marginTop:'20px', borderRadius: '5px'}}>
+              sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
                 Save changes
             </Button>
             <Button 
               className='profile-btn' 
               variant="contained" 
-              sx={{ alignSelf:'center', marginTop:'30px', marginBottom:'30px',borderRadius: '5px'}}>
+              sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
                 Cancel
             </Button>
           </div>

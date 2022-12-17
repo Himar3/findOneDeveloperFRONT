@@ -9,6 +9,7 @@ import './Profile.css'
 
 function Profile( dev ) {
   const navigate = useNavigate()
+  console.log(dev)
   return (
     <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">
@@ -28,14 +29,18 @@ function Profile( dev ) {
           </div>
           <div className='btn-profile-container'>
             <Button  onClick={() => navigate(`/profile`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>My Projects</Button>
+            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Projects</Button>
             <Button onClick={() => navigate(`/projects/create`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button>
           </div>
             <div id='img-box'>
             <CardMedia
               className='project-img'
               component="img"
+<<<<<<< HEAD
               src={"https://imgs.search.brave.com/OzAb61eIAEbN5W1A1rD0q0C0fkKFktoI_1bRTBEDK-4/rs:fit:860:537:1/g:ce/aHR0cHM6Ly93d3cu/a2luZHBuZy5jb20v/cGljYy9tLzU3LTU3/OTI2N19teS1uZWln/aGJvdXItdG90b3Jv/LWNhdGJ1cy10cmFu/c3BhcmVudC1oZC1w/bmctZG93bmxvYWQu/cG5n"}
+=======
+              src={dev.image}
+>>>>>>> himar
               alt="Image Dev"
             />
           </div>
