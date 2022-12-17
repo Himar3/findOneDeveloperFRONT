@@ -48,7 +48,7 @@ function NewProject() {
         team: values.team
       }
       const response = await createProject(project)
-      // navigate(`/projects/${id}`) 
+      navigate(`/projects/${response.id}`) 
     }
     
   useEffect(() => renderProvisionalMember()) 

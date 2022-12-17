@@ -11,14 +11,15 @@ const getDeveloperById = async(id) => {
 }
 
 const editOwnProfile = async(user) => {
-  const response = await api.put('profile', {
-    name: user.name,
-    email: user.email,
-    image: user.image,
-    about: user.about,
-    tech: user.tech
-  }, { headers: { token: localStorage.getItem('token')}})
+  console.log(user)
+  const response = await api.put('developers/profile', user, { headers: { token: localStorage.getItem('token')}})
+  console.log(response.data)
   return response.data
 }
 
-export { getAllDevelopers, getDeveloperById, editOwnProfile }
+const addTechesToUser = async(knowledge) => {
+  const response = await api.post('profile', {teches: knowledge.tech}, { headers: { token: localStorage.getItem('token')}})
+  return response.data
+}
+
+export { getAllDevelopers, getDeveloperById, editOwnProfile, addTechesToUser }

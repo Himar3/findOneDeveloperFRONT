@@ -9,6 +9,7 @@ import './Profile.css'
 
 function Profile( dev ) {
   const navigate = useNavigate()
+  console.log(dev)
   return (
     <Card className="profileBox" sx={{ maxWidth: 1400, minHeight: 500 }}>   
       <CardContent id="profile-content">
@@ -28,14 +29,14 @@ function Profile( dev ) {
           </div>
           <div className='btn-profile-container'>
             <Button  onClick={() => navigate(`/profile`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button>
-            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>My Projects</Button>
+            <Button className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Projects</Button>
             <Button onClick={() => navigate(`/projects/create`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button>
           </div>
             <div id='img-box'>
             <CardMedia
               className='project-img'
               component="img"
-              src={require("../../assets/GitHub-Mark.png")}
+              src={dev.image}
               alt="Image Dev"
             />
           </div>
