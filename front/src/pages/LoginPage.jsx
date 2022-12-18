@@ -5,9 +5,11 @@ import Footer from "../components/Footer/Footer";
 
 function LoginPage() {
   return (
-    <div>
+    <div className="content-wrap">
       <Header/>
-      <Login/>
+      <div className='background'>
+        <Login/>
+      </div>
       <Footer/>
     </div>
   )

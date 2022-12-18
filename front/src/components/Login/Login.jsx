@@ -50,7 +50,7 @@ function Login() {
   }
 
   return (
-    <Card className='background'>
+    // <Card className='background'>
       <Card className='login-container'>
           <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'space-around'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
             <Button className='login-signup'>Login</Button>
@@ -102,7 +102,7 @@ function Login() {
           <Button className='forgot' variant="text">Forgot password?</Button>
         </Box>
       </Card>
-    </Card>
+    // </Card>
   )
 }
 

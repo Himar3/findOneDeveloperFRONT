@@ -1,0 +1,270 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px 20px 50px;
+    height: 1000px;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.box-top {
+    width: 100%;
+    height: 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.box-mid {
+    width: 400px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-self: flex-start;
+    justify-content: center;
+}
+
+.box-bottom {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-top-left {
+    height: 300px;
+    width: 400px;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-start;
+    /* background-color: #343434; */
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-mid-box {
+    position: relative;
+    margin-top: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 400px;
+    background-color: #343434;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-mid-up {
+    position: relative;
+    margin-top: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 600px;
+    background-color: #343434;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-mid-center {
+    position: relative;
+    margin-top: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    background-color: #343434;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-mid-down {
+    position: relative;
+    margin-top: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 800px;
+    background-color: #343434;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-bottom-left {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    height: 150px;
+    width: 650px;
+    background-color: #343434;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-top-right {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 400px;
+    background-color: #343434;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-bottom-right {
+    position: relative;
+    margin-left: 0px;
+    margin-top: px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 650px;
+    background-color: #343434;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .home-mid-box {
+        animation: effect-mid-box 6s ;
+        animation-iteration-count: 1;
+    }
+    .home-mid-up {
+        animation: effect-mid-up 6s ;
+        animation-iteration-count: 1;
+    }
+    .home-mid-center {
+        animation: effect-mid-center 6s ;
+        animation-iteration-count: 1;
+    }
+    .home-top-right {
+        animation: effect-top-right 4s ;
+        animation-iteration-count: 1;
+    }
+    .home-top-left {
+        animation: effect-top-left 4s ;
+        animation-iteration-count: 1;
+    }
+    .home-mid-down {
+        animation: effect-mid-down 6s ;
+        animation-iteration-count: 1;
+    }
+    .home-bottom-right {
+        animation: effect-bottom-right 6s ;
+        animation-iteration-count: 1;
+    }
+    .home-bottom-left {
+        animation: effect-bottom-left 6s ;
+        animation-iteration-count: 1;
+    }
+}
+
+@keyframes effect-mid-box {
+    0%  {left:0px; top:0px;}
+    25% {left:0px; top:-400px;}
+    50% {}
+    75% {left:0px; top:-200px;}
+    100% {left:0px; top:0px;}
+}
+@keyframes effect-mid-up {
+    0%  {left:0px; top:0px;}
+    25% {left:0px; top:450px;}
+    50% {left:0px; top:450px; transform: rotate(0deg);}
+    75% {top:450px;}
+    100% {left:0px; top:0px;}
+}
+
+@keyframes effect-mid-center {
+    0%  {left: 0px; top: 0px;}
+    25% {left: 0px; top:-1000px;}
+    50% {left: 0px; top:-700px; transform: rotate(360deg);}
+    75% {transform: rotate(0deg);}
+    100% {left:0px; top:0px;}
+}
+@keyframes effect-top-left {
+    0%  {left: 0px; top: 0px;}
+    25% {left: 500px; top: 0px;}
+    50% {left: 500px; top: 0px;}
+    75% {transform: rotate(0deg);}
+    100% {left:0px; top:0px;}
+}
+@keyframes effect-top-right {
+    0%  {left: 0px; top: 0px;}
+    25% {left: -500px; top: 0px;}
+    50% {left: -500px; top: 0px;}
+    75% {transform: rotate(0deg);}
+    100% {left:0px; top:0px;}
+}
+@keyframes effect-mid-down {
+    0%  {left: 0px; top: 0px;}
+    25% {left: 0px; top: 0px;}
+    50% {transform: scale(-0.3);}
+    75% {transform: scale(-0.3);}
+    100% {left:0px; top:0px;}
+}
+@keyframes effect-bottom-left {
+    0%  {left: 0px; top: 0px; }
+    25% {left: -150px; top: -500px; transform: rotate(90deg);}
+    50% {left: 0px; top: 0px;}
+    75% {}
+    100% {left:0px; top:0px;}
+}
+@keyframes effect-bottom-right {
+    0%  {left: 0px; top: 0px; }
+    25% {left: 150px; top: -500px; transform: rotate(-90deg);}
+    50% {left: 0px; top: 0px;}
+    75% {}
+    100% {left:0px; top:0px;}
+}
+
+.profile-btn-home {
+    background-color: #d2ff00 !important;
+    color:#343434 !important;
+}
+
+.background-home {
+    position: absolute;
+    margin: 20px auto;
+    background-image: url(../../assets/background-findOneDev.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+}

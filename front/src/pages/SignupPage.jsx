@@ -5,10 +5,12 @@ import Footer from "../components/Footer/Footer";
 
 function SignupPage() {
   return (
-    <div>
+    <div className="content-wrap">
       <Header/>
-      <Signup/>
-      <Footer/>
+        <div className='background'>
+          <Signup/>
+        </div>
+        <Footer/>
     </div>
   )
 }

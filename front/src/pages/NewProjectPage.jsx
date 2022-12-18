@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 
 function NewProjectPage() {
   return (
-    <div>
+    <div className='content-wrap'>
       <Header/>
       <NewProject/>
       <Footer/>

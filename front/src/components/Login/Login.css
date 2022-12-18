@@ -1,6 +1,7 @@
 .background {
+    padding: 20px;
     margin: 20px auto;
-    height: 76vh;
+    height: fit-content;
     max-width: 150vh;
     background-image: url(../../assets/background-findOneDev.png);
     background-repeat: no-repeat;
