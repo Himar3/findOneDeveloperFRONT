@@ -6,33 +6,33 @@ import { createProject } from '../../services/project.services'
 
 function NewProject() {
   const navigate = useNavigate()
+  
+  const [members, setMembers ] = useState([])
+  
+  const handleDelete = (e) => {
+    console.log('borra')
+    // setMembers(members.filter(members.indexOf(e.parentNode.target),1))
+  }
+  
+  
+  
+  const addMember = () => {
+    setMembers(members => [...members, values.team]) 
+    console.log(members)
+  }
+  
+  const renderProvisionalMember = (members) => {
+    return members?.map((member, i) => <Chip key= {i} value={member} sx={{ marginRight: '5px', marginBottom: '5px' }} label={member} onDelete={handleDelete}/>)
+  }
+  
   const [values, setValues] = React.useState({
     title: '',
     // type:'',
     link: '',
     image: '',
     description: '',
-    team: ['']
+    team: ''
   })
-
-  const [members, setMembers ] = useState([])
-
-  const handleDelete = (e) => {
-    console.log('borra')
-    // setMembers(members.filter(members.indexOf(e.parentNode.target),1))
-  }
-  // const key = e.target.getAtributte('key')
-
-
-  const addMember = () => {
-    setMembers(members => [...members, values.team]) 
-  }
-
-  const renderProvisionalMember = (members) => {
-    return members?.map((member, i) => <Chip key= {i} value={member} sx={{ marginRight: '5px', marginBottom: '5px' }} label={member} onDelete={handleDelete}/>)
-  }
-  // const [label, setLabel] = React.useState('Repeat password')
-  // let valid = true
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
@@ -44,12 +44,13 @@ function NewProject() {
       type: values.type,
       link: values.link,
       image: values.image,
-        description: values.description,
-        team: values.team
-      }
-      const response = await createProject(project)
-      navigate(`/projects/${response.id}`) 
+      description: values.description,
+      team: members
     }
+    const response = await createProject(project)
+    console.log(response)
+    navigate(`/projects/${response.id}`) 
+  }
     
   useEffect(() => renderProvisionalMember()) 
 

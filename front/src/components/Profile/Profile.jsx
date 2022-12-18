@@ -9,7 +9,6 @@ import './Profile.css'
 
 function Profile( dev ) {
   const navigate = useNavigate()
-  console.log(dev)
   return (
     <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">

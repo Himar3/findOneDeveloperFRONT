@@ -11,6 +11,7 @@ const getOneProject = async(id) => {
 }
 
 const createProject = async(project) => {  //API.POST/PUT('RUTA', DATA, {OBJ})
+  console.log(project);
   const response	= await api.post('projects', project, { headers: { token: localStorage.getItem('token')}})
   return response.data
 }

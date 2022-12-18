@@ -10,19 +10,48 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
 import { addTechesToUser } from '../../services/dev.services';
 import './EditAccount.css'
 import * as defaultPic from '../../assets/defaultProfile.jpg'
+import { Box } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import { useState } from 'react';
+import { MenuItem } from '@mui/material';
 
-function EditAccount() {
-const navigate = useNavigate()
+
+
+
+
+function EditAccount( dev, techs ) {
+  console.log(techs);
+  const [tempTechs, setTempTechs] = useState([])
+  const pushTech = (e) => { setTempTechs(tempTechs => [...tempTechs, e.target.name]) }
+
+  const navigate = useNavigate()
+
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+    
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+  
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
   const [values, setValues] = React.useState({
-    name: '',
-    email: '',
-    image: '',
-    about: '',
-    tech: ['']
+    name: dev.name,
+    email: dev.email,
+    image: dev.image,
+    about: dev.about,
+    tech: dev.tech
   })
 
   const [label, setLabel] = React.useState('')
@@ -33,11 +62,12 @@ const navigate = useNavigate()
   }
 
   const userEdit = async () => {
-    const user = {}
-    if (values.name !== '') user.name = values.name
-    if (values.email !== '') user.email = values.email
-    if (values.image !== '') user.image = values.image
-    if (values.about !== '') user.about = values.about
+    const user = {
+      name: values.name,
+      email: values.email,
+      image: values.image,
+      about: values.about
+    }
     
     const response = await editOwnProfile(user)// post user data 
     console.log(response)
@@ -99,6 +129,42 @@ const navigate = useNavigate()
           </div>
           <div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {/* {techs?.map((tech, i) => (
+                <MenuItem key={i} onClick={pushTech()}>
+                  <Typography  textAlign="center">{tech.name}</Typography>
+                </MenuItem>
+              ))} */}
+            </Menu>
+          </Box>
             <div className="profile-data-description size-empty-tech">
              
             </div>    

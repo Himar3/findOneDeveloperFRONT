@@ -18,7 +18,7 @@ function ProjectProfilePage() {
 
   useEffect(() => { renderProject() }, [])
   return (
-    <div>
+    <div className="content-wrap">
         <Header/>
         <ProjectProfile 
         id={project.id}

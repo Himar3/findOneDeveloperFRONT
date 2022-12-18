@@ -94,13 +94,15 @@ function Header() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+  
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
   
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
   
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
