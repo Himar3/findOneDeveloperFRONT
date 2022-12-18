@@ -14,13 +14,15 @@ function EditAccountPage() {
     const teches = await getAllTechs() 
     setTechs(teches)
   }
+
+  console.log(techs)
   
   useEffect(() => { getTechs() }, [])
   return (
     <div className="content-wrap">
       <Header/>
       {/* pasar array por prop correctamente */}
-      <EditAccount/>
+      <EditAccount techs={techs}/>
       <Footer/>
     </div>
   )

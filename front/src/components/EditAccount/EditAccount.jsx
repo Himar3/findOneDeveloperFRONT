@@ -17,15 +17,15 @@ import * as defaultPic from '../../assets/defaultProfile.jpg'
 import { Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MenuItem } from '@mui/material';
 
 
 
 
 
-function EditAccount( dev, techs ) {
-  console.log(techs);
+function EditAccount( techs, dev ) {
+  console.log(techs); // AQUI YA PILLA EL OBJETO CON TECHS
   const [tempTechs, setTempTechs] = useState([])
   const pushTech = (e) => { setTempTechs(tempTechs => [...tempTechs, e.target.name]) }
 
@@ -83,7 +83,6 @@ function EditAccount( dev, techs ) {
     //   await //function post tech data
     // }
   }
-
   return (
     <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">

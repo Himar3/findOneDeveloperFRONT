@@ -13,7 +13,6 @@ function ProjectProfilePage() {
     const oneProject = await getOneProject(id)
     setProject(oneProject)
   }
-
   const { id } = useParams()
 
   useEffect(() => { renderProject() }, [])
