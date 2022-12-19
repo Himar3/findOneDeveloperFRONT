@@ -9,6 +9,7 @@ import ProjectProfilePage from '../pages/ProjectProfilePage'
 import AccountPage from '../pages/AccountPage'
 import NewProjectPage from '../pages/NewProjectPage'
 import EditAccountPage from '../pages/EditAccountPage'
+import DevProfilePage from '../pages/DevProfilePage'
 
 
 
@@ -19,9 +20,10 @@ const router = createBrowserRouter([
     {path: '/developers', element: <DevelopersPage/>},
     {path: '/projects', element: <ProjectsPage/>},
     {path: '/projects/:id', element: <ProjectProfilePage/>},
-    {path: '/developers/:id', element: <AccountPage/>},
+    {path: '/developers/:id', element: <DevProfilePage/>},
     {path: '/profile', element: <EditAccountPage/>},
-    {path: '/projects/create', element: <NewProjectPage/>}
+    {path: '/projects/create', element: <NewProjectPage/>},
+    {path: '/developer/profile',  element: <AccountPage/> }
 
 ])
 

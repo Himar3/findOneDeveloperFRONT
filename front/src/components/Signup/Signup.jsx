@@ -69,18 +69,14 @@ function Signup() {
   }
 
   const validate = () => {
-    //validate email
     if (valid) {
       handleErrorStyle()
       if (valid) {
         postSignup()
-      } else {
-        return (console.log(`Password it's not the same`))
-      }
-    } else {
-      return (console.log('Email format not valid'))
+      } 
     }
-  }
+  } 
+  
 
   return (
     // <Card className='background'>

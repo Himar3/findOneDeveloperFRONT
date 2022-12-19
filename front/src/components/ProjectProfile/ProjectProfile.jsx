@@ -1,8 +1,10 @@
 import React from 'react'
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material'
 import './ProjectProfile.css'
+import { useNavigate } from 'react-router-dom'; 
 
 function ProjectProfile(project) {
+  const navigate = useNavigate()
   return (
     <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">
@@ -49,6 +51,13 @@ function ProjectProfile(project) {
               {project.tech}
             </div>    
           </div>     
+        <Button 
+              onClick={()=> navigate('/projects')}
+              className='profile-btn' 
+              variant="contained" 
+              sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
+                Back
+            </Button>
         </div>
       </CardContent>
     </Card>

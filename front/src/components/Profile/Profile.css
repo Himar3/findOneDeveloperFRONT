@@ -32,7 +32,7 @@
     height: fit-content;
     width: fit-content;
     padding: 20px;
-    background-color: #e0f2f185;
+    background-color: #34343418;
     border-radius: 5px;
     width: 82%;
 }
@@ -45,7 +45,7 @@
     height: fit-content;
     width: 97%;
     padding: 20px;
-    background-color: #e0f2f185;
+    background-color:  #34343418;
     border-radius: 5px;
 }
 
@@ -93,7 +93,7 @@
 .project-img {
     width: 600px !important;
     height: 400px !important;
-    border: 2px solid #343434;
+    border: 1px solid #34343427;
     border-radius: 5px !important;
 } 
 
@@ -153,6 +153,7 @@
         align-self: center;
         margin-top: 10px;
     }
+
     .mid-top {
         margin-bottom: 380px;
     }

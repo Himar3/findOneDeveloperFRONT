@@ -3,22 +3,77 @@ import { Card, CardContent, CardMedia, Typography, Button, InputLabel, OutlinedI
 import './NewProject.css'
 import { useNavigate } from 'react-router'
 import { createProject } from '../../services/project.services'
+import getAllTechs from '../../services/tech.services';
+import { MenuItem } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import Select from '@mui/material/Select';
+import { Box } from '@mui/material';
+import { addTechesToProject } from '../../services/project.services'
 
 function NewProject() {
+  const [ techs, setTechs] = useState([])
+  const [techName, setTechName] = React.useState([]);
+  
+  const getTechs = async() => {
+    const teches = await getAllTechs()
+    setTechs(teches)
+  }
+  
+  const renderTechs = () => {
+    return techs?.map((tech) => {
+        return (
+          <MenuItem
+            key={tech.name}
+            value={tech.name}
+            style={getStyles(tech.name, techName, theme)}
+          >
+            {tech.name}
+          </MenuItem>
+        )
+    })
+  }
+        
+  const ITEM_HEIGHT = 70;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 2 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
+
+  function getStyles(name, TechName, theme) {
+    return {
+      fontWeight:
+        TechName.indexOf(name) === -1
+          ? theme.typography.fontWeightRegular
+          : theme.typography.fontWeightMedium,
+    };
+  }
+
+  const theme = useTheme();
+
+  const handleChangeSelect = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setTechName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
   const navigate = useNavigate()
   
   const [members, setMembers ] = useState([])
   
   const handleDelete = (e) => {
-    console.log('borra')
     // setMembers(members.filter(members.indexOf(e.parentNode.target),1))
   }
   
-  
-  
   const addMember = () => {
     setMembers(members => [...members, values.team]) 
-    console.log(members)
   }
   
   const renderProvisionalMember = (members) => {
@@ -48,16 +103,21 @@ function NewProject() {
       team: members
     }
     const response = await createProject(project)
-    console.log(response)
-    navigate(`/projects/${response.id}`) 
+      const knowledge = {
+        techs: techName,
+        projectId: response.id
+      }
+      const res = await addTechesToProject(knowledge)
+      navigate(`/projects/${response.id}`) 
+    
   }
     
   useEffect(() => renderProvisionalMember()) 
-
+  useEffect(() => { getTechs() }, []) 
   return (
     <Card className="profileBox" sx={{ maxWidth: 1500, minHeight: 500 }}>   
       <CardContent id="profile-content">
-        <div className='mid-top mid-top-margin'>
+        <div className='mid-top mid-top-margin-plus'>
           <div className='profile-name-email'>
           <div className="profile-title">
           <Typography variant="h3" >PROJECT</Typography>
@@ -76,7 +136,7 @@ function NewProject() {
           </FormControl>
           </div>
           <br></br>
-            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Type</Typography>
+            <Typography className='profile-subtitles mid-top-margin' variant="h6" color="text.secondary">Type</Typography>
             <div className="profile-data">
             <FormControl className='input-newProject' sx={{ m: 1, width: '25ch' }} variant="outlined">            
           <InputLabel>Type</InputLabel>
@@ -118,6 +178,33 @@ function NewProject() {
           </div>
         </div>
         <div className='mid-bottom'>  
+          <div>
+            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Technologies</Typography>
+            <div className='profile-data-description mid-top-margin'>
+            <FormControl sx={{ m: 1, width: '100%' }}>
+            <InputLabel id="demo-multiple-chip-label">Technologies</InputLabel>
+              <Select
+                  sx={{ maxWidth: "100%"}}
+                  labelId="demo-multiple-chip-label"
+                  id="demo-multiple-chip"
+                  multiple
+                  value={techName}
+                  onChange={handleChangeSelect}
+                  input={<OutlinedInput id="select-multiple-chip" label="technologies" />}
+                  renderValue={(selected) => (
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                    {selected.map((value) => (
+                      <Chip key={value} label={value} />
+                    ))}
+                  </Box>
+                  )}
+                MenuProps={MenuProps}
+              >
+                {renderTechs(techs)}
+              </Select>
+            </FormControl>
+          </div>
+          </div>     
         <Typography className='profile-subtitles' variant="h6" color="text.secondary">Link</Typography>
         <div className="profile-data-description mid-top-margin">
               <TextField sx={{width: '100%'}}
@@ -142,13 +229,16 @@ function NewProject() {
               />
             </div>
           </div> 
-          <div>
-            <Typography className='profile-subtitles' variant="h6" color="text.secondary">Technologies</Typography>
-            <div className="profile-data-description">
-              Tecnologias {/* Tecnologias // Aqui renderizar select */}
-            </div>    
-          </div>     
+          <div className='group-edit-btn'>
             <Button onClick={() => newProject()} className='profile-btn' variant="contained" sx={{ alignSelf:'center', marginTop:'30px', borderRadius: '5px'}}>Create Project</Button>
+            <Button 
+              onClick={()=> navigate('/developer/profile')}
+              className='profile-btn' 
+              variant="contained" 
+              sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
+                Cancel
+            </Button>
+          </div>
         </div>
         
       </CardContent>
