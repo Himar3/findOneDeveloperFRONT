@@ -7,8 +7,10 @@ function SignupPage() {
   return (
     <div className="content-wrap">
       <Header/>
-      <Signup/>
-      <Footer/>
+        <div className='background'>
+          <Signup/>
+        </div>
+        <Footer/>
     </div>
   )
 }

@@ -83,7 +83,7 @@ function Signup() {
   }
 
   return (
-    <Card className='background'>
+    // <Card className='background'>
       <Card className='login-container'>
           <ButtonGroup className="login-group"  sx={{ display: 'flex', alignSelf:'space-around'}} disableElevation variant="contained" aria-label="Disabled elevation buttons">
             <Button component={Link} to="/login" className='login-signup'>Login</Button>
@@ -169,7 +169,7 @@ function Signup() {
           </Button>
         </Box>
       </Card>
-    </Card>
+    // </Card>
   )
 }
 

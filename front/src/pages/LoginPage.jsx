@@ -7,7 +7,9 @@ function LoginPage() {
   return (
     <div className="content-wrap">
       <Header/>
-      <Login/>
+      <div className='background'>
+        <Login/>
+      </div>
       <Footer/>
     </div>
   )

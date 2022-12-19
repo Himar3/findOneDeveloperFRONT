@@ -21,7 +21,7 @@ export default function CardDev( dev ) {
           className='pic'
           component="img"
           height="160"
-          src={require('../../assets/GitHub-Mark.png')}
+          src={require('../../assets/perfil.jpg')}
           alt="Dev Pic"
         />
         <CardContent>
