@@ -19,6 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import { useState, useEffect } from 'react';
 import { MenuItem } from '@mui/material';
+import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 
 
 
@@ -137,7 +138,7 @@ function EditAccount( techs, dev ) {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <ArrowDropDownCircleIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -153,15 +154,13 @@ function EditAccount( techs, dev ) {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              sx={{}}
             >
-              {/* {techs?.map((tech, i) => (
+              {techs?.map((tech, i) => (
                 <MenuItem key={i} onClick={pushTech()}>
                   <Typography  textAlign="center">{tech.name}</Typography>
                 </MenuItem>
-              ))} */}
+              ))}
             </Menu>
           </Box>
             <div className="profile-data-description size-empty-tech">
