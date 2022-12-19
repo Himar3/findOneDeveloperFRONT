@@ -109,43 +109,28 @@ function EditAccount( dev ) {
     setValues({ ...values, [prop]: event.target.value })
   }
 
-  // const userEdit = async () => {
-  //   const user = {
-  //     name: values.name,
-  //     email: values.email,
-  //     image: values.image,
-  //     about: values.about
-  //   }
+  const userEdit = async () => {
+    const user = {
+      name: values.name,
+      email: values.email,
+      image: values.image,
+      about: values.about
+    }
     
-  //   const response = await editOwnProfile(user)// post user data 
-  //   console.log(response)
-  //   navigate(`/developers/${response.id}`)
-  // }  
-  
-  const compareTech = (techs, techName) => {
-      const techId = techName.map((tech) => {
-        for( let i = 0; i < techName.length; i++ ) {
-          if(tech === techs.name[i]) {
-            return techs.id[i]
-          } 
-        }
-      })
-      return techId
-  }
+    const response = await editOwnProfile(user)// post user data 
+    navigate(`/developers/${response.id}`)
+  }  
 
   const techEdit = async () => {
-  //   const knowledge = {
-  //     tech: techId
-  //   }
-  //   const response = await addTechesToUser(knowledge)
-  //   console.log(techName)
-  //   console.log(knowledge)
+    const knowledge = {
+      techs: techName
+    }
+    const response = await addTechesToUser(knowledge)
   }
 
   const postUpdate = () => {
-    console.log(compareTech(techs, techName))
     techEdit()
-    // userEdit()
+    userEdit()
   }
 
   useEffect(() => { getTechs() }, []) 
@@ -252,6 +237,7 @@ function EditAccount( dev ) {
                 Save changes
             </Button>
             <Button 
+              onClick={()=> navigate('/developer/profile')}
               className='profile-btn' 
               variant="contained" 
               sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>

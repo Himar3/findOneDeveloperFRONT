@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header/Header"
-import Profile from "../components/Profile/Profile"
-import { getOwnProfile } from "../services/dev.services"
+import { getDeveloperById } from "../services/dev.services"
 import { useParams } from "react-router"
 import { Chip } from '@mui/material'
 import Footer from "../components/Footer/Footer"
+import DevProfile from "../components/devProfile/devProfile"
 
 
-function AccountPage() {
+function DevProfilePage() {
     const [dev, setDev] = useState({})
 
-    const userProfile = async() => {
-      const myProfile = await getOwnProfile()
-      setDev(myProfile)
-    }
+    const renderDev = async() => {
+        const developer = await getDeveloperById(id)
+        setDev(developer)
+      }
 
     const { id } = useParams()
 
-    useEffect(() => { userProfile() }, [])
+    useEffect(() => { renderDev() }, [])
     return (
       <div className="content-wrap">
         <Header />
-        <Profile 
+        <DevProfile 
           id={dev.id}
           name={dev.name}
           email={dev.email}
@@ -37,4 +37,4 @@ function AccountPage() {
     )
 }
 
-export default AccountPage
+export default DevProfilePage

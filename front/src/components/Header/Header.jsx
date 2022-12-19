@@ -17,32 +17,8 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom'
 import './Header.css'
-// import { useEffect } from 'react';
-
-const pages = [
-  {  
-    title: 'Developers',
-    path: '/developers'
-  },
-  {
-    title: 'Projects',
-    path: '/projects'
-  },
-  {
-    title: 'Proposals',
-    path: '/proposals'
-  }
-];
-const settings = [
-  {
-    title: 'Profile',
-    path: '/profile'
-  },
-  {
-    title: 'Logout'
-    // funcion de logout
-  }
-];
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -88,8 +64,35 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 function Header() {
   
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const pages = [
+    {  
+      title: 'Developers',
+      path: '/developers'
+    },
+    {
+      title: 'Projects',
+      path: '/projects'
+    },
+    {
+        title: 'Proposals',
+        path: '/proposals'
+      }
+    ];
+
+    const settings = [
+      {
+        title: 'My profile',
+        path: '/developer/profile'
+      },
+      {
+        title: 'Logout'
+        // funcion de logout
+      }
+    ];
+    
+    
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
   
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -107,9 +110,10 @@ function Header() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  
   const checkLogin = () => {
     if (localStorage.email && localStorage.token) {
+      
       return (
       <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
@@ -209,7 +213,7 @@ function Header() {
             <ButtonGroup className="btngroup" variant="contained" disableElevation aria-label="contained button group" size="medium">
               <Button component={Link} to="/developers" className='pagesBtn'>Developers</Button>
               <Button  component={Link} to="/projects" className='pagesBtn'>Projects</Button>
-              <Button className='pagesBtn'>Proposals</Button>
+              {/* <Button className='pagesBtn'>Proposals</Button> */}
             </ButtonGroup>
           </Box>    
           <Search sx={{display: {xs: 'none', sm: 'flex'}}}>
