@@ -53,6 +53,13 @@ function DevProfile( dev ) {
               {dev.tech}
             </div>    
           </div>     
+        <Button 
+              onClick={()=> navigate('/developers')}
+              className='profile-btn' 
+              variant="contained" 
+              sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
+                Back
+            </Button>
         </div>
       </CardContent>
     </Card>
