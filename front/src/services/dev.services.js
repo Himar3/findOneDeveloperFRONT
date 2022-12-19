@@ -13,12 +13,14 @@ const getDeveloperById = async(id) => {
 const editOwnProfile = async(user) => {
   console.log(user)
   const response = await api.put('developers/profile', user, { headers: { token: localStorage.getItem('token')}})
-  console.log(response.data)
+  console.log(response.data);
   return response.data
 }
 
 const addTechesToUser = async(knowledge) => {
-  const response = await api.post('profile', {teches: knowledge.tech}, { headers: { token: localStorage.getItem('token')}})
+  console.log(knowledge);
+  const response = await api.post('techs/profile', {teches: knowledge.tech}, { headers: { token: localStorage.getItem('token')}})
+  console.log(response.data)
   return response.data
 }
 
