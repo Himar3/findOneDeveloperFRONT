@@ -5,10 +5,12 @@ import Footer from "../components/Footer/Footer";
 
 function HomePage() {
   return (
-    <div className="content-wrap">
-      <Header/>
-      <Home/>
-      <Footer/>
+    <div>
+      <div className="content-wrap-home">
+        <Header/>
+        <Home/>
+        <Footer/>
+      </div>
     </div>
   )
 }

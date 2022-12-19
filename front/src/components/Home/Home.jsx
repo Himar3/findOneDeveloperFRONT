@@ -7,22 +7,25 @@ import './Home.css'
 function Home() {
   return (
     <div>
-      <div className='home-container'>
-        <div className='box-top'>
-        <div className='home-top-left'><Login/></div>
-        <div className='home-top-right'></div>
+      <div className='background-home'>
+        <div className='home-container'>
+          <div className='box-top'>
+          <div className='home-top-left'><Login/></div>
+          <div className='home-top-right'></div>
+          </div>
+          <div className='box-mid'>
+          <div className='home-mid-box'></div>
+          <div className='home-mid-up'></div>
+          <div className='home-mid-center'></div>
+          {/* <div className='home-mid-down'></div> */}
+          </div>
+          <div className='box-bottom'>
+          <div className='home-bottom-left'></div>
+          <div className='home-bottom-right'></div>
         </div>
-        <div className='box-mid'>
-        <div className='home-mid-box'></div><br></br>
-        <div className='home-mid-up'></div><br></br>
-        <div className='home-mid-center'></div><br></br>
-        <div className='home-mid-down'></div>
-        </div>
-        <div className='box-bottom'>
-        <div className='home-bottom-left'></div><br></br>
-        <div className='home-bottom-right'></div>
         </div>
       </div>
+        <div className='profile-home'></div>
     </div>
   )
 }

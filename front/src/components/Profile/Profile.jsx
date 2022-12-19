@@ -35,7 +35,7 @@ function Profile( dev ) {
             <CardMedia
               className='project-img'
               component="img"
-              src={require("../../assets/GitHub-Mark.png")}
+              src={require("../../assets/perfil.jpg")}
               alt="Image Dev"
             />
           </div>

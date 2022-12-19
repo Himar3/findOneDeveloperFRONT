@@ -1,3 +1,15 @@
+.background-home {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1500px;
+    width:95%;
+    height:9%0px;
+    background-image: url(../../assets/background-findOneDev.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+}
 .home-container {
     display: flex;
     flex-direction: column;
@@ -52,87 +64,13 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-.home-mid-box {
-    position: relative;
-    margin-top: 50px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 400px;
-    background-color: #343434;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.home-mid-up {
-    position: relative;
-    margin-top: 50px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 600px;
-    background-color: #343434;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.home-mid-center {
-    position: relative;
-    margin-top: 50px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 400px;
-    background-color: #343434;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.home-mid-down {
-    position: relative;
-    margin-top: 50px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 800px;
-    background-color: #343434;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.home-bottom-left {
-    position: relative;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    border-radius: 30px;
-    display: flex;
-    height: 150px;
-    width: 650px;
-    background-color: #343434;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 .home-top-right {
     position: relative;
+    background-image: url(../../assets/why.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     margin-left: 0px;
-    margin-top: 0px;
+    margin-top: 40px;
     margin-bottom: 0px;
     border-radius: 30px;
     display: flex;
@@ -141,21 +79,111 @@
     height: 600px;
     width: 400px;
     background-color: #343434;
-
     background-repeat: no-repeat;
     background-size: contain;
 }
-.home-bottom-right {
+.home-mid-box {
+    background-image: url(../../assets/welcome.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
+    margin-top: -50px;
+    /* margin-top: 0px; */
     margin-left: 0px;
-    margin-top: px;
     margin-bottom: 0px;
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100px;
+    width: 350px;
+    /* background-color: #343434; */
+    color: #d2ff00;
+    background-size: contain;
+}
+.home-mid-up {
+    background-image: url(../../assets/about.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin-top: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 500px;
+    
+}
+.home-mid-center {
+    background-image: url(../../assets/trato.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 270px;
+    width: 400px;
+}
+/* .home-mid-down {
+    background-image: url(../../assets/mundi.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin-top: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: -200px;
+    border-radius: 30px;
+    height: 380px;
+    width: 600px;
+} */
+.home-bottom-left {
+    background-image: url(../../assets/muestra.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin-left: -20px;
+    margin-top: 350px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    height: 600px;
+    width: 450px;
+    /* background-color: #343434; */
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.home-bottom-right {
+    background-image: url(../../assets/mundi.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 300px;
+    margin-bottom: 0px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    width: 850px;
+    /* background-color: #343434; */
+}
+.test {
+    margin-left: auto;
+    margin-top: 300px;
+    margin-bottom: 50px;
     height: 150px;
-    width: 650px;
+    width: 450px;
     background-color: #343434;
     background-repeat: no-repeat;
     background-size: contain;
@@ -163,6 +191,14 @@
 
 
 @media (prefers-reduced-motion: no-preference) {
+    .home-top-left {
+        animation: effect-top-left 5s ;
+        animation-iteration-count: 1;
+    }
+    .home-top-right {
+        animation: effect-top-right 5s ;
+        animation-iteration-count: 1;
+    }
     .home-mid-box {
         animation: effect-mid-box 6s ;
         animation-iteration-count: 1;
@@ -175,14 +211,6 @@
         animation: effect-mid-center 6s ;
         animation-iteration-count: 1;
     }
-    .home-top-right {
-        animation: effect-top-right 4s ;
-        animation-iteration-count: 1;
-    }
-    .home-top-left {
-        animation: effect-top-left 4s ;
-        animation-iteration-count: 1;
-    }
     .home-mid-down {
         animation: effect-mid-down 6s ;
         animation-iteration-count: 1;
@@ -192,23 +220,37 @@
         animation-iteration-count: 1;
     }
     .home-bottom-left {
-        animation: effect-bottom-left 6s ;
+        animation: effect-bottom-left 8s ;
         animation-iteration-count: 1;
     }
 }
 
+@keyframes effect-top-left {
+    0%  {left: 0px; top: 0px; transform: scale(0);}
+    25% {left: 200px; top: 0px; transform: scale(0);}
+    50% {left: 500px; top: 0px;  transform: scale(0);}
+    75% {left: 300px; top: 0px; transform: scale(0.5);}
+    100% {left:0px; top:0px;}
+}
+@keyframes effect-top-right {
+    0%  {left: 0px; top: 0px;}
+    25% {left: -500px; top: 0px;}
+    50% {left: -500px; top: 0px;}
+    75% {transform: rotate(0deg);}
+    100% {left:0px; top:0px;}
+}
 @keyframes effect-mid-box {
     0%  {left:0px; top:0px;}
     25% {left:0px; top:-400px;}
-    50% {}
-    75% {left:0px; top:-200px;}
+    50% {left:0px; top:-400px;}
+    75% {left:0px; top:-300px;}
     100% {left:0px; top:0px;}
 }
 @keyframes effect-mid-up {
     0%  {left:0px; top:0px;}
-    25% {left:0px; top:450px;}
-    50% {left:0px; top:450px; transform: rotate(0deg);}
-    75% {top:450px;}
+    25% {left:0px; top:500px;}
+    50% {left:0px; top:500px; transform: rotate(0deg);}
+    75% {top:500px;}
     100% {left:0px; top:0px;}
 }
 
@@ -219,20 +261,6 @@
     75% {transform: rotate(0deg);}
     100% {left:0px; top:0px;}
 }
-@keyframes effect-top-left {
-    0%  {left: 0px; top: 0px;}
-    25% {left: 500px; top: 0px;}
-    50% {left: 500px; top: 0px;}
-    75% {transform: rotate(0deg);}
-    100% {left:0px; top:0px;}
-}
-@keyframes effect-top-right {
-    0%  {left: 0px; top: 0px;}
-    25% {left: -500px; top: 0px;}
-    50% {left: -500px; top: 0px;}
-    75% {transform: rotate(0deg);}
-    100% {left:0px; top:0px;}
-}
 @keyframes effect-mid-down {
     0%  {left: 0px; top: 0px;}
     25% {left: 0px; top: 0px;}
@@ -240,16 +268,16 @@
     75% {transform: scale(-0.3);}
     100% {left:0px; top:0px;}
 }
-@keyframes effect-bottom-left {
+/* @keyframes effect-bottom-left {
     0%  {left: 0px; top: 0px; }
     25% {left: -150px; top: -500px; transform: rotate(90deg);}
     50% {left: 0px; top: 0px;}
     75% {}
     100% {left:0px; top:0px;}
-}
+} */
 @keyframes effect-bottom-right {
     0%  {left: 0px; top: 0px; }
-    25% {left: 150px; top: -500px; transform: rotate(-90deg);}
+    25% {left: 150px; top: -800px; transform: scale(0.5);}
     50% {left: 0px; top: 0px;}
     75% {}
     100% {left:0px; top:0px;}
@@ -259,12 +287,6 @@
     background-color: #d2ff00 !important;
     color:#343434 !important;
 }
-
-.background-home {
-    position: absolute;
-    margin: 20px auto;
-    background-image: url(../../assets/background-findOneDev.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 30px;
+.content-wrap-home {
+    padding-bottom: 350px;
 }
