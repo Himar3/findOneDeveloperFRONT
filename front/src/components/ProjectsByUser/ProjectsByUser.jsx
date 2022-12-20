@@ -46,13 +46,13 @@ function ProjectsByUser() {
             {renderProjects()}
         </div>
           <div className='btn-filter'>
-            {/* <Button 
-              onClick={()=> navigate('/developers')}
+            <Button 
+              onClick={()=> navigate(`/developers/${project[0].userId}`)}
               className='profile-btn' 
               variant="contained" 
               sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
               Back
-            </Button> */}
+            </Button>
           </div>
           <Typography id='subtitle-projects-user' variant='h5'> Projects from other developers that might interest you </Typography> 
       </div>
