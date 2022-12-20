@@ -16,14 +16,10 @@ import * as defaultPic from '../../assets/defaultProfile.jpg'
 import { Box } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { MenuItem } from '@mui/material';
-<<<<<<< HEAD
-import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
-=======
 import { useTheme } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import getAllTechs from '../../services/tech.services';
->>>>>>> 265492ad05e46e37721ccd66b454cec79934b6b3
 
 
 
@@ -183,45 +179,6 @@ function EditAccount( dev ) {
           </div>
           <div>
             <Typography className='profile-subtitles' variant="h6" color="text.secondary">Knowledge</Typography>
-<<<<<<< HEAD
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <ArrowDropDownCircleIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{}}
-            >
-              {techs?.map((tech, i) => (
-                <MenuItem key={i} onClick={pushTech()}>
-                  <Typography  textAlign="center">{tech.name}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-            <div className="profile-data-description size-empty-tech">
-             
-            </div>    
-=======
           <div className='profile-data-description'>
             <FormControl sx={{ m: 1, width: 250 }}>
             <InputLabel id="demo-multiple-chip-label">Technologies</InputLabel>
@@ -246,7 +203,6 @@ function EditAccount( dev ) {
               </Select>
             </FormControl>
           </div>
->>>>>>> 265492ad05e46e37721ccd66b454cec79934b6b3
           </div>     
             <div id='img-box'>
               <CardMedia
