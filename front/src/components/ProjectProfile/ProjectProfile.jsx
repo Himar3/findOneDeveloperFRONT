@@ -27,13 +27,13 @@ function ProjectProfile(project) {
             <div className="profile-data">
               {project.team}
             </div>   
-             <Button href={'https://www.google.com'} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Link</Button>
+             <Button href={project.link} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Link</Button>
           </div>
             <div id='img-box'>
             <CardMedia
               className='project-img'
               component="img"
-              src={require("../../assets/GitHub-Mark.png")}
+              src={project.image}
               alt="Image Dev"
             />
           </div>

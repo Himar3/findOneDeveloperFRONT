@@ -20,7 +20,17 @@ const addTechesToProject = async(knowledge) => {
   return response.data
 }
 
+const getProjectsByUser = async(id) => {
+  const response = await api.get(`projects/developer/${id}`, { headers: { token: localStorage.getItem('token')}})
+  return response.data
+}
 
-export { getAllProjects, getOneProject, createProject, addTechesToProject }
+const getOwnProjects = async() => {
+  const response = await api.get('projects/profile', { headers: { token: localStorage.getItem('token')}})
+  return response.data
+}
+
+
+export { getAllProjects, getOneProject, createProject, addTechesToProject, getProjectsByUser, getOwnProjects }
 
 

@@ -18,7 +18,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom'
 import './Header.css'
 import { useEffect, useState } from 'react';
+import { getOwnProfile } from '../../services/dev.services';
 import { useNavigate } from 'react-router-dom';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,6 +65,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 function Header() {
+  const [dev, setDev] = useState({})
+  const navigate = useNavigate()
+
+  const userProfile = async() => {
+    const myProfile = await getOwnProfile()
+    setDev(myProfile)
+  }
+
+  const logout = () => {
+    localStorage.clear()
+  }
   
   const pages = [
     {  
@@ -82,11 +95,13 @@ function Header() {
     const settings = [
       {
         title: 'My profile',
-        path: '/developer/profile'
+        path: '/developer/profile',
+        function: ''
       },
       {
-        title: 'Logout'
-        // funcion de logout
+        title: 'Logout',
+        path: '/',
+        function: logout
       }
     ];
     
@@ -111,6 +126,8 @@ function Header() {
     setAnchorElUser(null);
   };
   
+  useEffect(() => { userProfile() }, [])
+
   const checkLogin = () => {
     if (localStorage.email && localStorage.token) {
       
@@ -118,7 +135,7 @@ function Header() {
       <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Remy Sharp" src={dev.image} />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -138,7 +155,7 @@ function Header() {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting, i) => (
-                  <MenuItem key={i} component={Link} to={setting.path} onClick={handleCloseUserMenu}>
+                  <MenuItem key={i} component={Link} to={setting.path} onClick={setting.function}>
                     <Typography textAlign="center">{setting.title }</Typography>
                   </MenuItem>
                 ))}
