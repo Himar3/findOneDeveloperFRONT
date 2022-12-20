@@ -253,7 +253,7 @@ function EditAccount( dev ) {
               sx={{margin:'25px 0 0 0', selfAlign:'start', maxWidth:'400px', maxHeight:'300px'}}
                 className='project-img'
                 component="img"
-                src="../../assets/defaultProfile.jpg"
+                src={require("../../assets/profile-default.png")}
                 alt="Image Dev"
               />
             </div>

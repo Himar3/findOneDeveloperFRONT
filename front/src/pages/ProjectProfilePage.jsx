@@ -23,6 +23,7 @@ function ProjectProfilePage() {
         id={project.id}
         title={ project.title}
         type={project.type}
+        image={project.image}
         description={project.description}
         link={project.link}
         team={project.team?.map((member, i) => {

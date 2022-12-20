@@ -82,7 +82,7 @@ function NewProject() {
   
   const [values, setValues] = React.useState({
     title: '',
-    // type:'',
+    type:'',
     link: '',
     image: '',
     description: '',
@@ -151,7 +151,7 @@ function NewProject() {
           </FormControl>
             </div>
           </div>
-          <div className='btn-profile-container'>
+          <div className='btn-profile-container top-margin-plus'>
           <Typography className='profile-subtitles' variant="h6" color="text.secondary">Team</Typography>
           <Button onClick={() => addMember()} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Add Member</Button>
             <div className="profile-data">
@@ -167,6 +167,17 @@ function NewProject() {
           </FormControl>
             {renderProvisionalMember(members)}
             </div>   
+          <Typography className='profile-subtitles' variant="h6" color="text.secondary">Picture</Typography>
+              <div className="profile-data-description">
+              <TextField sx={{width: '100%'}}
+                id="outlined-multiline-flexible"
+                label="Copy your picture link here:    ---'https://www.mypic/pic.com'---"
+                multiline
+                maxRows={1}
+                value={values.image}
+                onChange={handleChange('image')}
+              />
+              </div>
           </div>
             <div id='img-box'>
             <CardMedia

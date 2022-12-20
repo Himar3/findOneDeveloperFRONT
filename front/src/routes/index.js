@@ -10,6 +10,7 @@ import AccountPage from '../pages/AccountPage'
 import NewProjectPage from '../pages/NewProjectPage'
 import EditAccountPage from '../pages/EditAccountPage'
 import DevProfilePage from '../pages/DevProfilePage'
+import ProjectsByUserPage from '../pages/ProjectsByUserPage'
 
 
 
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
     {path: '/developers/:id', element: <DevProfilePage/>},
     {path: '/profile', element: <EditAccountPage/>},
     {path: '/projects/create', element: <NewProjectPage/>},
-    {path: '/developer/profile',  element: <AccountPage/> }
+    {path: '/developer/profile',  element: <AccountPage/> },
+    {path: '/projects/developer/:id', element: <ProjectsByUserPage/>}
 
 ])
 
