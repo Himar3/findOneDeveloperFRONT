@@ -22,6 +22,7 @@ const addTechesToProject = async(knowledge) => {
 
 const getProjectsByUser = async(id) => {
   const response = await api.get(`projects/developer/${id}`, { headers: { token: localStorage.getItem('token')}})
+  console.log(response)
   return response.data
 }
 

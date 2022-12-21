@@ -103,7 +103,7 @@ function NewProject() {
         techs: techName,
         projectId: response.id
       }
-      const res = await addTechesToProject(knowledge)
+      await addTechesToProject(knowledge)
       navigate(`/projects/${response.id}`) 
     
   }

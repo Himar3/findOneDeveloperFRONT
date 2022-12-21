@@ -13,6 +13,7 @@ function ProjectsByUser() {
     const listProject = async() => {
         const project = await getProjectsByUser(id)
         setProject(project)
+        console.log(project)
     }
     
     const { id } = useParams()
@@ -38,7 +39,7 @@ function ProjectsByUser() {
         })
       }
     }
-    useEffect(() => { listProject() }, [])
+    useEffect(() => {listProject() }, [()=>listProject])
     return (
       <div>
         <div id='title-filter' className="profile-title">
