@@ -10,11 +10,7 @@ import './ProjectsByUser.css'
 function ProjectsByUser() {
     const [ project, setProject ] = useState([])
     
-    const listProject = async() => {
-        const project = await getProjectsByUser(id)
-        setProject(project)
-        console.log(project)
-    }
+    
     
     const { id } = useParams()
 
@@ -39,7 +35,14 @@ function ProjectsByUser() {
         })
       }
     }
-    useEffect(() => {listProject() }, [()=>listProject])
+    useEffect(() => {
+      const listProject = async() => {
+      const project = await getProjectsByUser(id)
+        setProject(project)
+      }
+      listProject()
+    }, [id])
+
     return (
       <div>
         <div id='title-filter' className="profile-title">

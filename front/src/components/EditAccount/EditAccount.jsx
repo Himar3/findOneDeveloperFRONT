@@ -83,21 +83,6 @@ function EditAccount( dev ) {
   };
   const navigate = useNavigate()
 
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-    
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-  
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   const [values, setValues] = React.useState({
     name: dev.name,
     email: dev.email,
@@ -105,9 +90,6 @@ function EditAccount( dev ) {
     about: dev.about,
     tech: dev.tech
   })
-
-  const [label, setLabel] = React.useState('')
-  let valid = true
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
@@ -129,7 +111,7 @@ function EditAccount( dev ) {
     const knowledge = {
       techs: techName
     }
-    const response = await addTechesToUser(knowledge)
+    await addTechesToUser(knowledge)
   }
 
   const postUpdate = () => {

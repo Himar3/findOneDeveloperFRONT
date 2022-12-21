@@ -23,7 +23,7 @@ export default function CardProject({ id, userId, title, image, link, descriptio
           className='pic'
           component="img"
           height="160"
-          src={require("../../assets/projectExample.png")}
+          src={image}
           alt="Image Dev"
         />
         <CardContent>

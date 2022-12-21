@@ -9,13 +9,17 @@ import Footer from "../components/Footer/Footer";
 function ProjectProfilePage() {
   const [project, setProject] = useState({})
 
-  const renderProject = async () => {
-    const oneProject = await getOneProject(id)
-    setProject(oneProject)
-  }
+  
   const { id } = useParams()
 
-  useEffect(() => { renderProject() }, [])
+  useEffect(() => { 
+    const renderProject = async () => {
+      const oneProject = await getOneProject(id)
+      setProject(oneProject)
+    }
+    renderProject() 
+  }, [id])
+
   return (
     <div className="content-wrap">
         <Header/>

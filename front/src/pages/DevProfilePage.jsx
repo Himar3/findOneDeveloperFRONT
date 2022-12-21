@@ -9,15 +9,17 @@ import DevProfile from "../components/devProfile/devProfile"
 
 function DevProfilePage() {
     const [dev, setDev] = useState({})
+    
+    const { id } = useParams()
 
-    const renderDev = async() => {
+    useEffect(() => { 
+      const renderDev = async() => {
         const developer = await getDeveloperById(id)
         setDev(developer)
       }
+      renderDev() 
+    }, [id])
 
-    const { id } = useParams()
-
-    useEffect(() => { renderDev() }, [])
     return (
       <div className="content-wrap">
         <Header />
