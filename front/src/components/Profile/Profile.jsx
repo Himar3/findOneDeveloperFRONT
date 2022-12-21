@@ -5,7 +5,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom'; 
+import { defaultPic } from '../EditAccount/EditAccount';
 import './Profile.css'
+
 
 function Profile( dev ) {
   const navigate = useNavigate()
@@ -35,7 +37,7 @@ function Profile( dev ) {
             <CardMedia
               className='project-img'
               component="img"
-              src={dev.image}
+              src={defaultPic(dev)}
               alt="Image Dev"
             />
           </div>

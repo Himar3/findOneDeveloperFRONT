@@ -4,7 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import { defaultPic } from '../EditAccount/EditAccount';
 import '../Profile/Profile.css'
 
 function DevProfile( dev ) {
@@ -35,7 +36,7 @@ function DevProfile( dev ) {
             <CardMedia
               className='project-img'
               component="img"
-              src={dev.image}
+              src={defaultPic(dev)}
               alt="Image Dev"
             />
           </div>

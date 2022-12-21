@@ -10,7 +10,7 @@ function LoginPage() {
       <Header/>
       <div className='background'>
         <Login/>
-        <Signup />
+        {/* <Signup /> */}
       </div>
       <Footer/>
     </div>

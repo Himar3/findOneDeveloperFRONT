@@ -11,8 +11,6 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import TextField from '@mui/material/TextField';
 import { addTechesToUser } from '../../services/dev.services';
-import './EditAccount.css'
-import * as defaultPic from '../../assets/defaultProfile.jpg'
 import { Box } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { MenuItem } from '@mui/material';
@@ -20,8 +18,15 @@ import { useTheme } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import getAllTechs from '../../services/tech.services';
+import './EditAccount.css'
 
-
+const defaultPic = (dev) => {
+  if (!dev.image) {
+    return require('../../assets/profile-default.png')
+  } else {
+    return dev.image
+  } 
+}
 
 function EditAccount( dev ) {
   const [ techs, setTechs] = useState([])
@@ -73,7 +78,6 @@ function EditAccount( dev ) {
       target: { value },
     } = event;
     setTechName(
-      // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
   };
@@ -132,6 +136,7 @@ function EditAccount( dev ) {
     techEdit()
     userEdit()
   }
+  
 
   useEffect(() => { getTechs() }, []) 
   return (
@@ -209,7 +214,7 @@ function EditAccount( dev ) {
               sx={{margin:'25px 0 0 0', selfAlign:'start', maxWidth:'400px', maxHeight:'300px'}}
                 className='project-img'
                 component="img"
-                src={require("../../assets/profile-default.png")}
+                    src={defaultPic(dev)/*require('../../assets/profile-default.png')*/}
                 alt="Image Dev"
               />
             </div>
@@ -251,4 +256,4 @@ function EditAccount( dev ) {
 }
 
 
-export default EditAccount
+export { EditAccount, defaultPic }

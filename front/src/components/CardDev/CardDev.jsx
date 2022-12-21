@@ -9,10 +9,12 @@ import { teal } from '@mui/material/colors';
 import { useNavigate } from 'react-router';
 import { ButtonBase } from '@mui/material';
 import { Link } from '@mui/material';
+import { defaultPic } from '../EditAccount/EditAccount';
 import './CardDev.css'
 
 export default function CardDev( dev ) {
   const navigate= useNavigate()
+  
   return (
     <div className='cardContainer'>
       
@@ -21,7 +23,7 @@ export default function CardDev( dev ) {
           className='pic'
           component="img"
           height="160"
-          src={require('../../assets/perfil.jpg')}
+          src={defaultPic(dev)}
           alt="Dev Pic"
         />
         <CardContent>
