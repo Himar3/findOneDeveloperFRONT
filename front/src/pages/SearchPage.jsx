@@ -9,7 +9,7 @@ import { Typography } from '@mui/material';
 
 
 function SearchPage() {
-  const { searchTerm, setSearchTerm } = useContext(searchContext)
+  const { searchTerm } = useContext(searchContext)
   return (
     <div className="content-wrap">
         <Header/>

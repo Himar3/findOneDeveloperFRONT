@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import Header from "../components/Header/Header"
 import Profile from "../components/Profile/Profile"
 import { getOwnProfile } from "../services/dev.services"
-import { useParams } from "react-router"
 import { Chip } from '@mui/material'
 import Footer from "../components/Footer/Footer"
 
@@ -14,8 +13,6 @@ function AccountPage() {
       const myProfile = await getOwnProfile()
       setDev(myProfile)
     }
-
-    const { id } = useParams()
 
     useEffect(() => { userProfile() }, [])
     return (

@@ -16,12 +16,13 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom'
-import './Header.css'
 import { useEffect, useState } from 'react';
 import { getOwnProfile } from '../../services/dev.services';
 import { useNavigate } from 'react-router-dom';
 import { searchContext } from '../../App.js';
 import { useContext } from 'react';
+import { defaultPic } from '../EditAccount/EditAccount';
+import './Header.css'
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -125,7 +126,7 @@ function Header() {
       <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src={dev.image} />
+                  <Avatar alt="Remy Sharp" src={defaultPic(dev)} />
                 </IconButton>
               </Tooltip>
               <Menu

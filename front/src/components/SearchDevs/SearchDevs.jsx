@@ -17,13 +17,9 @@ function SearchDevs( {searchTerm} ) {
     setDevs(devs)
   }
 
-  console.log(searchTerm)
-
   const renderFilteredDevs = () => {
       const filteredDevs = devs.filter((dev) => dev.tech.includes(searchTerm) || dev.name.includes(searchTerm))
-      console.log(filteredDevs)
       if (searchTerm !== '') {
-        console.log(filteredDevs)
          if (filteredDevs.length <1 ) {
           return (<Typography variant='h4'>Sorry there is no match! try to search for something else</Typography>)
          } else {
