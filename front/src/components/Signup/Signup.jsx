@@ -1,20 +1,12 @@
-import React from 'react'
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
+import React from 'react';
+import { Box, Card, IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl, Button, ButtonGroup } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailIcon from '@mui/icons-material/Email';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { signup } from '../../services/auth.services'
-import { Link, useNavigate } from 'react-router-dom'
-import Card from '@mui/material/Card';
-import './Signup.css'
+import { signup } from '../../services/auth.services';
+import { Link, useNavigate } from 'react-router-dom';
+import './Signup.css';
 
 function Signup() {
   const navigate = useNavigate()

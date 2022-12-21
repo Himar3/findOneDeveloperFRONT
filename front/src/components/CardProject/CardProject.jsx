@@ -4,11 +4,11 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import './CardProject.css'
 import { ButtonBase } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Link } from '@mui/material';
 import { teal } from '@mui/material/colors';
+import './CardProject.css'
 
 
 export default function CardProject({ id, userId, title, image, link, description, team, tech }) {

@@ -1,9 +1,9 @@
 import React from 'react'
-import CardProject from '../CardProject/CardProject.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { getAllProjects } from '../../services/project.services'
 import { Typography } from '@mui/material'
+import CardProject from '../CardProject/CardProject.jsx'
 
 
 

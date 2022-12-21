@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardContent, CardMedia, Typography, Button, InputLabel, OutlinedInput, FormControl, TextField, Chip } from '@mui/material'  
-import './NewProject.css'
+import { Card, CardContent, CardMedia, Typography, Button, InputLabel, OutlinedInput, FormControl, TextField, Chip, MenuItem, Select, Box } from '@mui/material'  
 import { useNavigate } from 'react-router'
-import { createProject } from '../../services/project.services'
-import getAllTechs from '../../services/tech.services';
-import { MenuItem } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import Select from '@mui/material/Select';
-import { Box } from '@mui/material';
+import { createProject } from '../../services/project.services'
 import { addTechesToProject } from '../../services/project.services'
+import getAllTechs from '../../services/tech.services';
+import './NewProject.css'
 
 function NewProject() {
   const [ techs, setTechs] = useState([])
@@ -60,7 +57,6 @@ function NewProject() {
       target: { value },
     } = event;
     setTechName(
-      // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
   };

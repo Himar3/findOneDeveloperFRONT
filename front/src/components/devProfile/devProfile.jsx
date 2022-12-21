@@ -28,9 +28,7 @@ function DevProfile( dev ) {
             </div>
           </div>
           <div className='btn-profile-container'>
-            {/* <Button  onClick={() => navigate(`/profile`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Edit profile</Button> */}
             <Button onClick={() => navigate(`/projects/developer/${dev.id}`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>Projects</Button>
-            {/* <Button onClick={() => navigate(`/projects/create`)} className='profile-btn' variant="contained" sx={{borderRadius: '5px'}}>New project</Button> */}
           </div>
             <div id='img-box'>
             <CardMedia

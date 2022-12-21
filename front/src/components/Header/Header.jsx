@@ -12,10 +12,10 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom'
+import { styled, alpha } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import { getOwnProfile } from '../../services/dev.services';
 import { useNavigate } from 'react-router-dom';
@@ -56,7 +56,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -224,7 +223,6 @@ function Header() {
             <ButtonGroup className="btngroup" variant="contained" disableElevation aria-label="contained button group" size="medium">
               <Button component={Link} to="/developers" className='pagesBtn'>Developers</Button>
               <Button  component={Link} to="/projects" className='pagesBtn'>Projects</Button>
-              {/* <Button className='pagesBtn'>Proposals</Button> */}
             </ButtonGroup>
           </Box>    
           <Search sx={{display: {xs: 'none', sm: 'flex'}}}>

@@ -1,13 +1,11 @@
 import React from 'react'
 import { getProjectsByUser } from '../../services/project.services'
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router'
+import { Button, Typography } from '@mui/material'
 import CardProject from '../CardProject/CardProject.jsx'
-import { useState } from 'react'
-import { useEffect } from 'react'
 import '../ProjectList/ProjectList.css'
 import './ProjectsByUser.css'
-import { useParams } from 'react-router'
-import { Button, Typography } from '@mui/material'
-import { useNavigate } from 'react-router'
 
 function ProjectsByUser() {
     const [ project, setProject ] = useState([])

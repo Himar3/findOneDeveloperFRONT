@@ -1,9 +1,9 @@
 import React from 'react'
-import CardDev from '../CardDev/CardDev.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { getAllDevelopers } from '../../services/dev.services'
 import { Typography } from '@mui/material'
+import CardDev from '../CardDev/CardDev.jsx'
 
 
 
