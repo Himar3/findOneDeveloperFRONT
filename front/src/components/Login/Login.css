@@ -20,6 +20,17 @@
     border-radius: 10px;
 }
 
+.login-container-hidden {
+    display: none;
+    flex-direction: column;
+    margin: 55px auto;
+    padding: 30px;
+    height: 600px;
+    max-width: 400px;
+    background-color: #e0f2f1 !important;
+    border-radius: 10px;
+}
+
 .login-group {
     margin-bottom: 120px;
 }

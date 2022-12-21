@@ -20,9 +20,12 @@ import './Header.css'
 import { useEffect, useState } from 'react';
 import { getOwnProfile } from '../../services/dev.services';
 import { useNavigate } from 'react-router-dom';
+import { searchContext } from '../../App.js';
+import { useContext } from 'react';
 
 
 const Search = styled('div')(({ theme }) => ({
+
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -65,7 +68,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 function Header() {
+  
+  const { searchTerm, setSearchTerm } = useContext(searchContext)
+
   const [dev, setDev] = useState({})
+
   const navigate = useNavigate()
 
   const userProfile = async() => {
@@ -85,25 +92,8 @@ function Header() {
     {
       title: 'Projects',
       path: '/projects'
-    },
-    {
-        title: 'Proposals',
-        path: '/proposals'
-      }
-    ];
-
-    const settings = [
-      {
-        title: 'My profile',
-        path: '/developer/profile',
-        function: ''
-      },
-      {
-        title: 'Logout',
-        path: '/',
-        function: logout
-      }
-    ];
+    }
+  ];
     
     
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -154,11 +144,12 @@ function Header() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting, i) => (
-                  <MenuItem key={i} component={Link} to={setting.path} onClick={setting.function}>
-                    <Typography textAlign="center">{setting.title }</Typography>
+                  <MenuItem component={Link} to='/developer/profile' onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">My profile</Typography>
                   </MenuItem>
-                ))}
+                  <MenuItem component={Link} to='/' onClick={() => logout()}>
+                  <Typography textAlign="center">Log out</Typography>
+                </MenuItem>             
               </Menu>
             </Box>
       )
@@ -166,7 +157,9 @@ function Header() {
       return <Button component={Link} to="/login" variant="text">Login/Signup</Button>
     }
   }
-//no conseguimos re-renderizar el header para cambiar el icono avatar/boton login
+  const handleOnChangeSearch = (e) => {
+    setSearchTerm(e.target.value)
+  }
 
   return (
     <AppBar className='appbar'>
@@ -240,6 +233,9 @@ function Header() {
             <StyledInputBase className="searchBar"
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
+              value={searchTerm}
+              onChange={(e) => handleOnChangeSearch(e)}
+              onKeyDown={(e) => { if (e.key === 'Enter') navigate('/search')}}
             />
           </Search>
           {checkLogin()}

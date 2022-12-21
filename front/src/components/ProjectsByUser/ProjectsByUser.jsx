@@ -22,26 +22,30 @@ function ProjectsByUser() {
     const navigate = useNavigate()
     
     const renderProjects = () => {
-      return project && project.map((project, i) => {
-          return (
-              <CardProject key={i}
-              id={project.id}
-              userId={project.userId}
-              title={project.title}
-              image={project.image}
-              link={project.link}
-              description={project.description}
-              tech={project.tech.map((e) => `#${e} `)}
-              />
-          )
-      })
+      if (project.length < 1) {
+        return <Typography variant="h5" sx={{marginTop: '30px'}}>Ups! This user has no projects yet</Typography>
+      } else {
+        return project && project.map((project, i) => {
+            return (
+                <CardProject key={i}
+                id={project.id}
+                userId={project.userId}
+                title={project.title}
+                image={project.image}
+                link={project.link}
+                description={project.description}
+                tech={project.tech.map((e) => `#${e} `)}
+                />
+            )
+        })
+      }
     }
     useEffect(() => { listProject() }, [])
     return (
       <div>
         <div id='title-filter' className="profile-title">
           <Typography variant="h3" >PROJECTS</Typography>
-          </div>
+        </div>
         <div className='cardList'>
             {renderProjects()}
         </div>

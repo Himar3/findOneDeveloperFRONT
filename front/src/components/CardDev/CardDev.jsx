@@ -30,7 +30,7 @@ export default function CardDev( dev ) {
               { dev.name }
             </Typography>
             <div className='group-btn' sx={{ width: 80 }}>
-              <Link /*onClick={() => navigate(`/projects/`)}*/ sx={{color:teal[100], marginTop: '6px'}}>
+              <Link onClick={() => navigate(`/projects/developer/${dev.id}`)} sx={{color:teal[100], marginTop: '6px'}}>
                 <FolderIcon />
               </Link>
               <Link className='btn' aria-label="add to favorites" sx={{color:teal[100]}}>

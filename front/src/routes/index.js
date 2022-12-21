@@ -11,6 +11,7 @@ import NewProjectPage from '../pages/NewProjectPage'
 import EditAccountPage from '../pages/EditAccountPage'
 import DevProfilePage from '../pages/DevProfilePage'
 import ProjectsByUserPage from '../pages/ProjectsByUserPage'
+import SearchPage from '../pages/SearchPage'
 
 
 
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
     {path: '/profile', element: <EditAccountPage/>},
     {path: '/projects/create', element: <NewProjectPage/>},
     {path: '/developer/profile',  element: <AccountPage/> },
-    {path: '/projects/developer/:id', element: <ProjectsByUserPage/>}
+    {path: '/projects/developer/:id', element: <ProjectsByUserPage/>},
+    {path: '/search', element: <SearchPage/>},
+
 
 ])
 
