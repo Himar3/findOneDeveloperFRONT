@@ -6,11 +6,11 @@ const getAllProjects = async() => {
 }
 
 const getOneProject = async(id) => {
-  const response = await api.get(`projects/${id}`, { headers: { token:localStorage.getItem('token')}}) //PARA GET Y DELETE
+  const response = await api.get(`projects/${id}`, { headers: { token:localStorage.getItem('token')}})
   return response.data
 }
 
-const createProject = async(project) => {  //API.POST/PUT('RUTA', DATA, {OBJ})
+const createProject = async(project) => {
   const response	= await api.post('projects', project, { headers: { token: localStorage.getItem('token')}})
   return response.data
 }
@@ -22,7 +22,6 @@ const addTechesToProject = async(knowledge) => {
 
 const getProjectsByUser = async(id) => {
   const response = await api.get(`projects/developer/${id}`, { headers: { token: localStorage.getItem('token')}})
-  console.log(response)
   return response.data
 }
 

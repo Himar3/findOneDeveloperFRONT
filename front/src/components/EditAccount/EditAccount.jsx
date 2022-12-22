@@ -117,6 +117,7 @@ function EditAccount( dev ) {
   const postUpdate = () => {
     techEdit()
     userEdit()
+    navigate('/developer/profile')
   }
   
 

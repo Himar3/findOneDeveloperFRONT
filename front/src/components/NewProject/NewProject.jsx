@@ -105,7 +105,6 @@ function NewProject() {
       }
       await addTechesToProject(knowledge)
       navigate(`/projects/${response.id}`) 
-    
   }
     
   useEffect(() => renderProvisionalMember()) 
