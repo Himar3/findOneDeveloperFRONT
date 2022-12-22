@@ -18,13 +18,13 @@ function SearchDevs( {searchTerm} ) {
   }
 
   const renderFilteredDevs = () => {
-      const filteredDevs = devs.filter((dev) => dev.tech.includes(searchTerm) || dev.name.includes(searchTerm))
-      if (searchTerm !== '') {
-         if (filteredDevs.length <1 ) {
-          return (<Typography variant='h4'>Sorry there is no match! try to search for something else</Typography>)
-         } else {
+    const filteredDevs = devs.filter((dev) => dev.tech.includes(searchTerm) || dev.name.includes(searchTerm))
+    if (searchTerm !== '') {
+        if (filteredDevs.length <1 ) {
+            return (<Typography variant='h4'>Sorry there is no match! try to search for something else</Typography>)
+        } else {
             return filteredDevs.map((dev, i) => {
-               return (
+                return (
                    <CardDev key={i}
                    id={dev.id}
                    name={dev.name}
@@ -35,10 +35,10 @@ function SearchDevs( {searchTerm} ) {
                    />
                )
            })        
-         }
-      } else {
-         return (<Typography variant='h4'>Sorry there is no match! try to search for something else</Typography>)
-      } 
+        }
+    } else {
+        return (<Typography variant='h4'>Sorry there is no match! try to search for something else</Typography>)
+    } 
   }
 
   useEffect(() => { listDev() }, [])
