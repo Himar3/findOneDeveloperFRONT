@@ -53,7 +53,7 @@ function ProjectsByUser() {
         </div>
           <div className='btn-filter'>
             <Button 
-              onClick={()=> navigate(`/developers/profile`)}
+              onClick={()=> navigate(`/developers/${project[0].userId}`)}
               className='profile-btn' 
               variant="contained" 
               sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
