@@ -46,14 +46,14 @@ function ProjectsByUser() {
     return (
       <div>
         <div id='title-filter' className="profile-title">
-          <Typography variant="h3" >PROJECTS</Typography>
+          <Typography variant="h3">PROJECTS</Typography>
         </div>
         <div className='cardList'>
             {renderProjects()}
         </div>
           <div className='btn-filter'>
             <Button 
-              onClick={()=> navigate(`/developers/${project[0].userId}`)}
+              onClick={()=> navigate(`/developers/${id}`)}
               className='profile-btn' 
               variant="contained" 
               sx={{ alignSelf:'center', marginTop:'40px', borderRadius: '5px'}}>
