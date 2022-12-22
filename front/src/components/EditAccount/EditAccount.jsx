@@ -103,7 +103,7 @@ function EditAccount( dev ) {
       about: values.about
     }
     
-    const response = await editOwnProfile(user)
+  await editOwnProfile(user)
   }  
 
   const techEdit = async () => {
