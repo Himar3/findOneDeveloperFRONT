@@ -103,8 +103,7 @@ function EditAccount( dev ) {
       about: values.about
     }
     
-    const response = await editOwnProfile(user)// post user data 
-    navigate(`/developers/${response.id}`)
+    const response = await editOwnProfile(user)
   }  
 
   const techEdit = async () => {
