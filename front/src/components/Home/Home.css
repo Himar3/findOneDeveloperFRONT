@@ -1,124 +1,106 @@
+.home {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .background-home {
     display: flex;
+    padding: 50px;
     flex-direction: column;
+    flex-wrap: wrap;
     margin: auto;
-    max-width: 1500px;
     width:95%;
-    height:9%0px;
+    height:90%;
     background-image: url(../../assets/background-findOneDev.png);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
 }
+
 .home-container {
     display: flex;
-    flex-direction: column;
-    padding: 0 50px 20px 50px;
-    height: 1000px;
-    width: 95%;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 1000px;
 }
-.box-top {
-    width: 100%;
-    height: 0px;
+
+.box-top-mid {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 80px ;
 }
 
 .box-mid {
-    margin-left: 450px;
-    width: 400px;
-    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-self: center;
-    justify-self: flex-start;
-    justify-content: center;
+    min-width: 400px;
+    height: fit-content;
+    margin-bottom: 80px;
 }
 
-.box-bottom {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .home-top-left {
+    position: relative;
     height: 300px;
     width: 400px;
     justify-content: center;
-    position: relative;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-left: 0px;
     border-radius: 30px;
     display: flex;
     align-items: flex-start;
-    /* background-color: #343434; */
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .home-top-right {
     position: relative;
-    background-image: url(../../assets/why.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 0px;
-    margin-top: 40px;
-    margin-bottom: 0px;
-    border-radius: 5px;
     display: flex;
+    background-image: url(../../assets/why.png);
+    border-radius: 5px;
     justify-content: center;
     align-items: center;
     height: 600px;
     width: 400px;
     background-color: #343434;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
+
 .home-mid-box {
     background-image: url(../../assets/welcome.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    margin-top: -50px;
-    /* margin-top: 0px; */
-    margin-left: 0px;
-    margin-bottom: 0px;
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
-    width: 350px;
-    /* background-color: #343434; */
+    width: 100%;
     color: #d2ff00;
     background-size: contain;
 }
+
 .home-mid-up {
+    display: flex;
     background-image: url(../../assets/about1.png);
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
-    margin-top: 50px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
     border-radius: 30px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    width: 500px;
-    
+    height: 150px;
+    width: 100%;
 }
+
 .home-mid-center {
     background-image: url(../../assets/trato.png);
     background-repeat: no-repeat;
@@ -131,54 +113,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 270px;
-    width: 400px;
+    height: 150px;
+    width: 70%;
 }
-/* .home-mid-down {
-    background-image: url(../../assets/mundi.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
-    margin-top: 50px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: -200px;
-    border-radius: 30px;
-    height: 380px;
-    width: 600px;
-} */
+
+.box-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+}
+
 .home-bottom-left {
     background-image: url(../../assets/muestra.png);
     background-repeat: no-repeat;
-    background-size: contain;
     position: relative;
-    margin-left: -20px;
-    margin-top: 350px;
-    margin-bottom: 0px;
     border-radius: 30px;
-    display: flex;
     height: 600px;
     width: 450px;
-    /* background-color: #343434; */
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .home-bottom-right {
+    position: relative;
     background-image: url(../../assets/mundi.png);
     background-repeat: no-repeat;
     background-size: contain;
-    position: relative;
-    margin-left: 0px;
-    margin-top: 300px;
-    margin-bottom: 0px;
     border-radius: 30px;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 550px;
     width: 850px;
-    /* background-color: #343434; */
 }
+
 .test {
     margin-left: auto;
     margin-top: 300px;
@@ -189,7 +158,6 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
     .home-top-left {
@@ -262,6 +230,7 @@
     75% {transform: rotate(0deg);}
     100% {left:0px; top:0px;}
 }
+
 @keyframes effect-mid-down {
     0%  {left: 0px; top: 0px;}
     25% {left: 0px; top: 0px;}
@@ -269,13 +238,7 @@
     75% {transform: scale(-0.3);}
     100% {left:0px; top:0px;}
 }
-/* @keyframes effect-bottom-left {
-    0%  {left: 0px; top: 0px; }
-    25% {left: -150px; top: -500px; transform: rotate(90deg);}
-    50% {left: 0px; top: 0px;}
-    75% {}
-    100% {left:0px; top:0px;}
-} */
+
 @keyframes effect-bottom-right {
     0%  {left: 0px; top: 0px; }
     25% {left: 150px; top: -800px; transform: scale(0.5);}
@@ -288,6 +251,9 @@
     background-color: #d2ff00 !important;
     color:#343434 !important;
 }
+
 .content-wrap-home {
     padding-bottom: 350px;
 }
+
+@media(max-width: 1100px)
